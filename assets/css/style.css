@@ -5,3 +5,13 @@
 body {
     margin: 0;
 }
+
+/* Variabler */
+:root{
+    /* Farver */
+    --teal: #4D8C75;
+    --lightCreme:#F3F1EC;
+    --darkRed:#400106;
+    --orange:#CE632A;
+    --lightBrown:#D9985F;
+}
