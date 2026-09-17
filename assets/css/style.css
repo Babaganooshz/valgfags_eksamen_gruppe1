@@ -41,12 +41,24 @@ body {
     }
 }
 
+/* HEADER */
 .forsideHeader{
     height: 40vh;
     background-image: url(../img/headerimg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top: -20px;
+    z-index: 0;
+   
+}
+
+    .legend{
+        color: var(--lightCreme);
+        display: flex;
+        justify-self: center;
+        text-align: center;
+    }
 
     nav{
         background-color: var(--teal);
@@ -55,6 +67,9 @@ body {
         justify-content: space-between;
         align-items: center;
         max-width: 100%;
+        box-shadow: 2px 2px 7px black;
+        z-index: 1;
+        position: sticky;
 
         .logo{
             display: flex;
@@ -64,28 +79,103 @@ body {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            
+            justify-content: center;
+            gap: 1rem;
             li{
-               padding: var(--smallSpacer );
+               padding: var(--xsSpacer );
                list-style-type: none;
                list-style-position: outside;
+               color: var(--lightCreme);
+               cursor: pointer;
+               font-weight: bold;
+               
             }
+                li:hover{
+                color: var(--teal);
+                background-color: var(--lightCreme);
+                  border-radius: 50px;
+                 transition-duration: 0.2s;
+               }
+
+               li:active{
+                border-bottom: 2px var(--lightCreme);
+               }
+            
         }
 
         .userbtn{
-          
+          padding: 0rem var(--mediumSpacer);
             background-color: var(--teal);
             border: none;
-            width: 100%;
-            padding: 1rem;
+            height: 100px;
+            cursor: pointer;
+            
 
             span{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 color: var(--lightCreme);
+                font-weight: bold;
             }
+
+            
         }
 
     }
+
+
+/* ASIDE */
+
+.user-aside{
+position: absolute;
+top: 100px;
+right: 0;
+ display: flex;
+ flex-direction: column;
+  justify-self:right;
+  width: 128px;
+  height: 400px;
+  overflow: hidden;
+  z-index: 2;
+
+  ul{
+    padding: 0;
+    margin: 0;
+    position: relative;
+     background-color: var(--teal);
+     transform: translateX(100%);
+     visibility: hidden;
+     opacity: 0;
+     transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+   
+    li{
+               list-style-type: none;
+               list-style-position: outside;
+               color: var(--lightCreme);
+               cursor: pointer;
+               font-weight: bold;
+               display: block;
+                
+                border-bottom: 2px solid var(--lightCreme);
+                padding: 20px 10px;
+               
+    }
+
+    li:hover{
+         color: var(--teal);
+                background-color: var(--lightCreme);
+                 transition-duration: 0.2s;
+                
+                
+    }
+    
+  }
+
+}
+ body:has(.userbtn:hover, .user-aside:hover) .user-aside ul { 
+transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+ 
 }
