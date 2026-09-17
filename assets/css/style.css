@@ -22,7 +22,6 @@ body {
     --largeSpacer:48px;
     --xLargeSpacer:80px;
 
-
     /* Typography */
     --heading1:48px;
     --heading2:32px;
@@ -31,4 +30,62 @@ body {
     --bigTekst:20px;
     --mediumTekst:16px;
     --smallTekst:14px;
+
+    /* Fonts */
+    h1, h2, h3, h4, h5{
+        font-family: Kreon;
+    }
+
+    p, button, a, li, span{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.forsideHeader{
+    height: 40vh;
+    background-image: url(../img/headerimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    nav{
+        background-color: var(--teal);
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+
+        .logo{
+            display: flex;
+        }
+
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+            li{
+               padding: var(--smallSpacer );
+               list-style-type: none;
+               list-style-position: outside;
+            }
+        }
+
+        .userbtn{
+          
+            background-color: var(--teal);
+            border: none;
+            width: 100%;
+            padding: 1rem;
+
+            span{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: var(--lightCreme);
+            }
+        }
+
+    }
 }
