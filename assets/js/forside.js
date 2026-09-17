@@ -42,6 +42,28 @@ const recipes = [
     }
 ];
 
+const tips = [
+
+    {
+     image: 'assets\img\tips\fish.jpg',
+     title: 'How to Scaling, gutting and cleaning a round fish',
+
+    description: 'Learn Round fish include fish such as mackerel, sea bass, sea bream, haddock, mullet, pollack, snapper and John Dory. Scaling fish is a messy job - you can ask your fishmonger to do it for you but its easy once you know how (put the fish in a clean bin liner when removing the scales and guts to minimise mess)...',
+    },
+       {
+     image: 'assets\img\tips\kylling.jpg',
+     title: 'Spatchcocking chicken and poultry',
+
+    description: 'Spatchcocking means to split open and flatten out a bird for grilling or barbecuing. This speeds up the cooking time and ensures more even cooking. When spatchcocking, be sure to remove the straight spinal column from the bird, and NOT the curved breast bone at the front of the bird....',
+    },
+    
+     {
+     image: 'assets\img\tips\pasta.jpg',
+     title: 'How to make fresh pasta by hand',
+
+    description: 'Making pasta isnt as difficult as you might think - you may need a pasta machine, but if you have a rolling pin and a strong pair of arms you can hand roll it. Once you have mixed the eggs into the flour you should knead it for 10-15 minutes, or until the dough is smooth and elastic. This also takes a fair amount of elbow grease...',
+    }
+]
 
 
 // Variabler til favoritfunktionen
