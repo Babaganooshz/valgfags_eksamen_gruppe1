@@ -249,6 +249,7 @@ transform: translateX(0);
                 
               h3{
                 margin: 5px 0px;
+                font-size: var(--heading3);
               }
             }
         }
@@ -333,6 +334,96 @@ transform: translateX(0);
         .favorite{
             width: 24px;
             height: 24px;
+        }
+    }
+}
+
+/* Tips */
+
+.tips{
+       margin:0rem var(--xLargeSpacer) ;
+       color: var(--darkRed);
+}
+.tip-cards{
+    display: flex;
+overflow-x: scroll;
+flex-shrink: 0;
+      gap: var(--smallSpacer);
+              scrollbar-width: thin;
+        
+
+    article{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border: 4px solid var(--darkRed);
+
+        .tekst{
+            margin: 0 auto;
+            padding: 0px 5px ;
+            grid-column: 2fr;
+            width: 350px;
+            h3{
+                margin: 0;
+                font-size: var(--heading3);
+            }
+
+            p{
+               font-size: 20px;
+               line-break: strict;
+               line-height: 150%;
+            }
+            
+        }
+        img{
+            width: 200px;
+            height: 380px;
+            object-fit: cover;
+            object-position: center;
+            grid-column: 1fr;
+        }
+    }
+}
+
+/* Chefs */
+
+.chefs{
+    margin: var(--xLargeSpacer);
+
+    .chef-cards{
+        display: flex;
+        overflow-x: scroll;
+        overflow-y:hidden ;
+        gap: var(--xsSpacer);
+        flex-shrink: 0;
+        
+      
+        article{
+              width: 250px;
+              height: 300px;
+            background-position: center;
+            background-size: cover;
+             flex-shrink: 0;
+             border-radius: 10px;
+
+            .tekst{
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 14rem;
+                color: var(--lightCreme);
+                h3{
+                    margin: 0;
+                    font-size: var(--heading3);
+
+                }
+                     p{
+                         padding:  5px 10px;
+                        border-radius: 50px;  
+                        height: 24px;     
+                        align-self: first baseline;               background-color: var(--teal);
+                        
+                    }
+            }
         }
     }
 }

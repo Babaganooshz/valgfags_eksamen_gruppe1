@@ -42,6 +42,60 @@ const recipes = [
     }
 ];
 
+const tips = [
+    {
+        image: 'assets/img/tips/fish.jpg',
+        alt: 'fish',
+        title: 'How to Scaling, gutting and cleaning a round fish',
+        description: 'Learn Round fish include fish such as mackerel, sea bass, sea bream, haddock, mullet, pollack, snapper and John Dory. Scaling fish is a messy job - you can ask your fishmonger to do it for you but its easy once you know how (put the fish in a clean bin liner when removing the scales and guts to minimise mess)...',
+    },
+    {
+        image: 'assets/img/tips/kylling.jpg',
+        alt: 'chicken',
+        title: 'Spatchcocking chicken and poultry',
+        description: 'Spatchcocking means to split open and flatten out a bird for grilling or barbecuing. This speeds up the cooking time and ensures more even cooking. When spatchcocking, be sure to remove the straight spinal column from the bird, and NOT the curved breast bone at the front of the bird....',
+    },
+    {
+        image: 'assets/img/tips/pasta.jpg',
+        alt: 'pasta',
+        title: 'How to make fresh pasta by hand',
+        description: 'Making pasta isnt as difficult as you might think - you may need a pasta machine, but if you have a rolling pin and a strong pair of arms you can hand roll it. Once you have mixed the eggs into the flour you should knead it for 10-15 minutes, or until the dough is smooth and elastic. This also takes a fair amount of elbow grease...',
+    }
+];
+
+
+const chefs = [
+    {
+        navn: 'Mads Jensen',
+        image: 'assets/img/chefs/mads.avif',
+        rolle: 'Professionel chef',
+    },
+    {
+        navn: 'Xiaomei Lee',
+        image: 'assets/img/chefs/Xiaomei.avif',
+        rolle: 'Professionel chef',
+    },
+    {
+        navn: 'Antonio Devicienti',
+        image: 'assets/img/chefs/antonio.avif',
+        rolle: 'Professionel chef',
+    },
+    {
+        navn: 'Sami Zayn',
+        image: 'assets/img/chefs/sami.avif',
+        rolle: 'Professionel chef',
+    },
+    {
+        navn: 'Sophie Turner',
+        image: 'assets/img/chefs/sophie.avif',
+        rolle: 'Amateur cook',
+    },
+    {
+        navn: 'Adam Henderson',
+        image: 'assets/img/chefs/adam.avif',
+        rolle: 'Amateur cook',
+    }
+];
 
 
 // Variabler til favoritfunktionen
@@ -49,7 +103,18 @@ const outline = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-63
 const filled = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z";
 
 
-// Opretter et tomt article element og fylder den ud med innerHTML for hvert card
+
+// Opretter tomt <article> og giv den klassen "chef-card"
+
+// Giver den en klasse der senere kan styles
+
+//  Henter navn, image, rolle fra chef arrayet
+
+// Fylder artikel med innerHTML
+
+// Gør sådan at baggrundsbillede i artikelen også erstattes i loopet
+
+//   5. Returnerer article
 function createRecipeCard(recipe) {
     const article = document.createElement('article');
 
@@ -89,7 +154,7 @@ function createRecipeCard(recipe) {
         </div>
     `;
 
-//   ænder baggrundsbilledet for hver article 
+    // Ænder baggrundsbilledet for hver article
     const funktions = article.querySelector('.funktions');
     if (funktions) {
         funktions.style.backgroundImage = `url("${recipe.image}")`;
@@ -99,9 +164,47 @@ function createRecipeCard(recipe) {
 }
 
 
- 
+// Laver tip card
+function createTipCard(tip) {
+    const article = document.createElement('article');
 
-// Finder der hvor alle opskrift cards skal være og rendere opskriftcards for hver array der er længere oppe
+    const { title, description, image, alt } = tip;
+
+    article.innerHTML = `
+        <img src="${image}" alt="${alt}">
+        <div class="tekst">
+            <h3>${title}</h3>
+            <p>${description}</p>
+        </div>
+    `;
+
+    return article;
+}
+
+
+// Laver chef card
+function createChefCard(chef) {
+    const article = document.createElement('article');
+    article.classList.add('chef-card');
+
+    const { navn, image, rolle } = chef;
+
+    article.innerHTML = `
+        <div class="tekst">
+            <h3>${navn}</h3>
+            <p>${rolle}</p>
+        </div>
+    `;
+
+    // Sæt chefens billede som baggrund på selve kortet,
+    // ligesom .funktions gør det for opskrift-cards
+    article.style.backgroundImage = `url("${image}")`;
+
+    return article;
+}
+
+
+// Render opskrifter
 function renderRecipes() {
     const recipeCards = document.querySelector('#recipeCards');
     if (!recipeCards) return;
@@ -111,11 +214,42 @@ function renderRecipes() {
     });
 }
 
-// rendere renderRecipes() først når hele HTML-dokumentet er indlæst
+// Render tips
+function renderTips() {
+    const tipCards = document.querySelector('.tip-cards');
+    if (!tipCards) return;
+
+    tips.forEach((tip) => {
+        tipCards.appendChild(createTipCard(tip));
+    });
+}
+
+// Render chefs
+// NB: kræver at HTML'en har en container med klassen "chef-cards" inde i
+// <section class="chefs">, fx:
+//   <section class="chefs">
+//     <h2>Meet the chefs</h2>
+//     <div class="chef-cards"></div>
+//   </section>
+function renderChefs() {
+    const chefCards = document.querySelector('.chef-cards');
+    if (!chefCards) return;
+
+    chefs.forEach((chef) => {
+        chefCards.appendChild(createChefCard(chef));
+    });
+}
+
+
+// Smækker alt ind i HTML når alt HTML er læst
 document.addEventListener('DOMContentLoaded', renderRecipes);
+document.addEventListener('DOMContentLoaded', renderTips);
+document.addEventListener('DOMContentLoaded', renderChefs);
 
 
-// Lytter efter et click på den nærmeste .favorit. Læser om ikonet er toggled. Hvis toggled får den svg stien outline, hvis ikke toggled for den stien filled og bliver toggled
+// Lytter efter et click på den nærmeste .favorite. Læser om ikonet er
+// toggled. Hvis toggled får den svg stien outline, hvis ikke toggled
+// får den stien filled og bliver toggled
 document.addEventListener('click', function (event) {
     const favorite = event.target.closest('.favorite');
     if (!favorite) {
