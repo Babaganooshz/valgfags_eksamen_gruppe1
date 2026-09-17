@@ -5,3 +5,30 @@
 body {
     margin: 0;
 }
+
+/* Variabler */
+:root{
+    /* Farver */
+    --teal: #4D8C75;
+    --lightCreme:#F3F1EC;
+    --darkRed:#400106;
+    --orange:#CE632A;
+    --lightBrown:#D9985F;
+
+    /* Spacing & padding */
+    --xsSpacer:16px;
+    --smallSpacer:24px;
+    --mediumSpacer:32px;
+    --largeSpacer:48px;
+    --xLargeSpacer:80px;
+
+
+    /* Typography */
+    --heading1:48px;
+    --heading2:32px;
+    --heading3:24px;
+
+    --bigTekst:20px;
+    --mediumTekst:16px;
+    --smallTekst:14px;
+}
