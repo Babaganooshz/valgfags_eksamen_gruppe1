@@ -6,7 +6,8 @@ const recipes = [
         description: 'This is Marys classic lasagne recipe which has been perfected over the years...',
         time: '2h 30min',
         cuisine: 'Italien',
-        level: 'Easy'
+        level: 'Easy',
+        link: 'opskrift.html'
     },
     {
         image: './assets/img/opskrifter/easy_spaghetti_bolognese_93639_16x9.jpg',
@@ -69,6 +70,7 @@ const chefs = [
         navn: 'Mads Jensen',
         image: 'assets/img/chefs/mads.avif',
         rolle: 'Professionel chef',
+        link: 'chef.html'
     },
     {
         navn: 'Xiaomei Lee',
@@ -97,30 +99,50 @@ const chefs = [
     }
 ];
 
+const brands = [
+    {
+        image: 'assets/img/savernake-knives-tyDgjiJbz54-unsplash.jpg',
+        title: 'Savernake knives',
+        description: 'If youre looking for high-quality knives, I would recommend the brand savernake. They are well known for their durability, quality materials, and reliable performance'
+    },
+    {
+        image: 'assets/img/odiseo-castrejon-xPPoMWL4r_A-unsplash.jpg',
+        title: 'Le muse',
+        description: 'If youre looking for high-quality cast iron pot, I would recommend the brand le muse. They are well known for their durability, quality materials, and reliable performance'
+    }
+];
 
 // Variabler til favoritfunktionen
 const outline = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z";
 const filled = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z";
 
 
-
-// Opretter tomt <article> og giv den klassen "chef-card"
-
-// Giver den en klasse der senere kan styles
-
-//  Henter navn, image, rolle fra chef arrayet
-
-// Fylder artikel med innerHTML
-
-// Gør sådan at baggrundsbillede i artikelen også erstattes i loopet
-
-//   5. Returnerer article
+// PSEUDO-KODE createRecipeCard(recipe):
+//   1. Opret tomt <article>
+//   2. Hent title, description, time, cuisine, level OG link fra recipe
+//   3. Byg selve HTML-indholdet i en variabel (indhold) - IKKE direkte
+//      ind i article.innerHTML endnu (RETTET: den oprindelige kode gjorde
+//      dette forkert - satte article.innerHTML til opskriftens HTML og
+//      forsøgte BAGEFTER at wrappe en variabel "indhold", som aldrig var
+//      defineret, i et <a> - det gav en ReferenceError, som stoppede
+//      hele kortet fra at blive lavet)
+//   4. Hvis recipe.link findes:
+//        - pak HELE indholdet ind i et <a href="...">
+//      Ellers:
+//        - vis kortet uden link, som normalt
+//      (Samme mønster som createChefCard - RETTET: brugte fejlagtigt
+//      class="chef-card-link" i stedet for en klasse der giver mening
+//      for opskrift-cards, fx "recipe-card-link")
+//   5. Sæt baggrundsbillede (finder .funktions INDE i det indsatte
+//      indhold, uanset om det er wrappet i et <a> eller ej)
+//   6. Returnér article
 function createRecipeCard(recipe) {
     const article = document.createElement('article');
+    article.style.cursor = 'pointer'; // alle opskrift-kort ser klikbare ud
 
-    const { title, description, time, cuisine, level } = recipe;
+    const { title, description, time, cuisine, level, link } = recipe;
 
-    article.innerHTML = `
+    const indhold = `
         <div class="funktions">
             <div class="tags">
                 <button class="time">
@@ -154,7 +176,15 @@ function createRecipeCard(recipe) {
         </div>
     `;
 
-    // Ænder baggrundsbilledet for hver article
+    if (link) {
+        // Opskriften får et link
+        article.innerHTML = `<a href="${link}" class="recipe-card-link">${indhold}</a>`;
+    } else {
+        // Intet link angivet -> vis kortet uden link, som normalt
+        article.innerHTML = indhold;
+    }
+
+    // Ænder baggrundsbilledet for hver article. querySelector søger i
     const funktions = article.querySelector('.funktions');
     if (funktions) {
         funktions.style.backgroundImage = `url("${recipe.image}")`;
@@ -171,7 +201,7 @@ function createTipCard(tip) {
     const { title, description, image, alt } = tip;
 
     article.innerHTML = `
-        <img src="${image}" alt="${alt}">
+        <img src="${image}" alt="${alt}" loading="lazy">
         <div class="tekst">
             <h3>${title}</h3>
             <p>${description}</p>
@@ -182,23 +212,56 @@ function createTipCard(tip) {
 }
 
 
-// Laver chef card
+// Giver alle class chef-card ligesom længere oppe og tilføjer cusor pointer til alle cards så de alle ser klikbare ud ligemeget om de har link eller ej
 function createChefCard(chef) {
     const article = document.createElement('article');
     article.classList.add('chef-card');
+    article.style.cursor = 'pointer';
 
-    const { navn, image, rolle } = chef;
+    const { navn, image, rolle, link } = chef;
 
-    article.innerHTML = `
+    const indhold = `
         <div class="tekst">
             <h3>${navn}</h3>
-            <p>${rolle}</p>
+            <div class="bottom">
+                <p>${rolle}</p>
+                <button>Follow <span><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="20px" fill="#4D8C75"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span></button>
+            </div>
         </div>
     `;
 
-    // Sæt chefens billede som baggrund på selve kortet,
-    // ligesom .funktions gør det for opskrift-cards
+    if (link) {
+        //   Hvis link bliver man ført videre til siden
+        article.innerHTML = `<a href="${link}" class="chef-card-link">${indhold}</a>`;
+    } else {
+        //   Viser stadig cardet og ser ud til det virker, men har intet link
+        article.innerHTML = indhold;
+    }
+
+    // Sætter chef billede ind som baggrundsbillede
     article.style.backgroundImage = `url("${image}")`;
+
+    return article;
+}
+
+
+// Laver brand card
+function createBrandCard(brand) {
+    const article = document.createElement('article');
+    article.classList.add('brand-card');
+
+    const { title, image, description } = brand;
+
+    article.innerHTML = `
+        <div class="tekst">
+            <img src="${image}" alt="${title}" loading="lazy">
+            <h3>${title}</h3>
+            <div class="bottom-tekst">
+                <p>${description}</p>
+                <button>Visit Website<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F1EB"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg></button>
+            </div>
+        </div>
+    `;
 
     return article;
 }
@@ -225,12 +288,6 @@ function renderTips() {
 }
 
 // Render chefs
-// NB: kræver at HTML'en har en container med klassen "chef-cards" inde i
-// <section class="chefs">, fx:
-//   <section class="chefs">
-//     <h2>Meet the chefs</h2>
-//     <div class="chef-cards"></div>
-//   </section>
 function renderChefs() {
     const chefCards = document.querySelector('.chef-cards');
     if (!chefCards) return;
@@ -240,11 +297,22 @@ function renderChefs() {
     });
 }
 
+// Render brands
+function renderBrands() {
+    const brandCards = document.querySelector('.brand-cards');
+    if (!brandCards) return;
+
+    brands.forEach((brand) => {
+        brandCards.appendChild(createBrandCard(brand));
+    });
+}
+
 
 // Smækker alt ind i HTML når alt HTML er læst
 document.addEventListener('DOMContentLoaded', renderRecipes);
 document.addEventListener('DOMContentLoaded', renderTips);
 document.addEventListener('DOMContentLoaded', renderChefs);
+document.addEventListener('DOMContentLoaded', renderBrands);
 
 
 // Lytter efter et click på den nærmeste .favorite. Læser om ikonet er
