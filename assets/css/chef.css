@@ -1,0 +1,417 @@
+.chefMain {
+    margin-left: var(--xLargeSpacer);
+    margin-right: var(--xLargeSpacer);
+    margin-top: var(--mediumSpacer);
+
+}
+
+/* mads intro section start */
+.chefTag {
+    background-color: var(--teal);
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 0.5rem;
+    display: inline-block;
+    margin: 0;
+}
+
+.chefBioText {
+    margin-top: var(--smallSpacer);
+    font-size: var(--paragraph);
+    line-height: 1.5;
+    width: 80%;
+
+}
+
+.followButton {
+    background-color: var(--darkRed);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    margin-right: var(--smallSpacer);
+}
+
+.followButton:hover {
+    background-color: var(--lightBrown);
+}
+
+.messageButton {
+    background-color: var(--darkRed);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    margin-right: var(--smallSpacer);
+}
+
+.messageButton:hover {
+    background-color: var(--lightBrown);
+}
+
+.chefStats {
+    display: flex;
+    gap: var(--xLargeSpacer);
+    list-style: none;
+    padding-left: 0;
+    margin-top: var(--xLargeSpacer);
+
+}
+
+.chefStats li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chefImage {
+
+    img {
+        height: 450px;
+        width: 660px;
+        flex-shrink: 0;
+        margin-top: var(--mediumSpacer);
+        object-fit: cover;
+
+    }
+}
+
+.chefprofile {
+    padding-top: var(--mediumSpacer);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: var(--xLargeSpacer);
+
+}
+
+/* mads intro section slut */
+
+/* mads opskrifter section start */
+
+.chefRecipeNav {
+    background-color: 723420;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    gap: 30px;
+    border-bottom: 1px solid var(--lightCreme);
+}
+
+
+.chefRecipeNav a {
+    color: var(--lightCreme);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chefRecipeNav a.active {
+    border-bottom: 2px solid var(--lightCreme);
+}
+
+.chefRecipeSubnav a.active {
+    border-bottom: 1px solid var(--lightCreme);
+}
+
+
+.chefRecipeSubnav {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    background-color: 723420;
+    box-shadow: none;
+    align-items: center;
+    justify-content: normal;
+    gap: 30px;
+
+}
+
+
+.chefRecipeSubnav a {
+    color: var(--lightCreme);
+    text-decoration: none;
+}
+
+.chefRecipeSubnav a.active {
+    font-weight: bold;
+}
+
+
+.chefrecipes {
+
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-color: #723420;
+    padding: 40px 5%;
+    box-sizing: border-box;
+
+
+    .chefRecipe-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--mediumSpacer);
+        max-width: 100%;
+    }
+
+
+
+
+
+    article {
+        width: 100%;
+        min-width: 0;
+        border-radius: 10px;
+        background-color: var(--lightCreme);
+
+        .recipe-text {
+            margin: 0 auto;
+            padding: 5px;
+
+            .top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h3 {
+                    margin: 5px 0px;
+                    font-size: var(--heading3);
+                }
+            }
+        }
+
+
+    }
+
+    article:hover {
+        transform: scale(1.1);
+    }
+
+
+
+    p {
+        margin-top: 5px;
+    }
+
+    .stars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+
+        .star {
+            width: 18px;
+            height: 18px;
+            display: block;
+            fill: currentColor;
+        }
+
+        .fullStar {
+            color: #F2EB27;
+        }
+
+        .emptyStar {
+            color: #D9D9D9;
+        }
+
+        .star_number {
+            align-self: center;
+            justify-self: center;
+            display: flex;
+            margin: 0;
+        }
+    }
+
+    .funktions {
+        display: flex;
+        background-image: url(../img/opskrifter/mexican_16x9.jpg);
+        background-position: center;
+        background-size: cover;
+        justify-content: space-between;
+        height: 200px;
+        padding: 5px;
+        border-radius: 10px 10px 0px 0px;
+
+        .tags {
+            display: flex;
+            gap: 8px;
+
+            button {
+                border: none;
+                border-radius: 10px;
+                max-height: 24px;
+                display: flex;
+                align-items: center;
+                color: var(--lightCreme);
+                font-weight: bold;
+                padding: 5px;
+            }
+
+            .favorite {
+                cursor: pointer;
+            }
+
+            .time {
+                background-color: var(--teal);
+            }
+
+            .cuisine {
+                background-color: var(--darkRed);
+            }
+
+            .level {
+                background-color: var(--lightBrown);
+            }
+
+        }
+
+        .favorite {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+}
+
+/* opskrift slut */
+
+
+/* brand card start  */
+.chefbrands {
+    margin: 0;
+    padding-top: var(--xLargeSpacer);
+    padding-bottom: var(--xLargeSpacer);
+
+    .chefBrandsCards {
+        display: flex;
+        gap: var(--xsSpacer);
+        overflow-x: auto;
+
+        .brand-image {
+            height: 280px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        article {
+            width: 49%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background-color: var(--orange);
+            display: flex;
+            flex-direction: column;
+            color: var(--lightCreme);
+
+            h3 {
+                padding-left: var(--smallSpacer);
+                padding-top: 0.5rem;
+                padding-bottom: var(--smallSpacer);
+                margin: 0;
+                font-size: var(--heading3);
+            }
+
+            .brandInfo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                p {
+                    padding-left: var(--smallSpacer);
+                    color: var(--lightCreme);
+                    align-self: flex-start;
+                    margin: 0;
+                    padding-bottom: var(--smallSpacer);
+                    padding-left: var(--smallSpacer);
+                }
+
+                .visitWebsite {
+                    background-color: var(--darkRed);
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    padding: 1rem 1rem;
+                    cursor: pointer;
+                    margin-right: var(--smallSpacer);
+                    flex-shrink: 0;
+
+                }
+
+                .visitWebsite:hover {
+                    background-color: var(--lightBrown);
+                }
+
+            }
+        }
+
+    }
+}
+
+
+
+/* brand card slut  */
+
+
+/* chefs cards start */
+.otherchefs {
+    margin: 0;
+    padding-bottom: var(--xLargeSpacer);
+
+    .otherChefsCards {
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: var(--xsSpacer);
+        flex-shrink: 0;
+
+
+        article {
+            width: 250px;
+            height: 300px;
+            background-position: center;
+            background-size: cover;
+            flex-shrink: 0;
+            border-radius: 10px;
+
+
+            .tekst {
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 14rem;
+                color: var(--lightCreme);
+
+                h3 {
+                    margin: 0;
+                    font-size: var(--heading3);
+
+                }
+
+                p {
+                    padding: 3px 10px;
+                    margin: 0;
+                    margin-top: 5px;
+                    border-radius: 50px;
+                    height: 24px;
+                    align-self: first baseline;
+                }
+
+                p.professionel {
+                    background-color: var(--teal);
+                }
+
+                p.amateur {
+                    background-color: var(--orange);
+                }
+            }
+        }
+    }
+}
+
+
+/* chefs cards slut */
