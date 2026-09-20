@@ -117,24 +117,12 @@ const outline = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-63
 const filled = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z";
 
 
-// PSEUDO-KODE createRecipeCard(recipe):
-//   1. Opret tomt <article>
-//   2. Hent title, description, time, cuisine, level OG link fra recipe
-//   3. Byg selve HTML-indholdet i en variabel (indhold) - IKKE direkte
-//      ind i article.innerHTML endnu (RETTET: den oprindelige kode gjorde
-//      dette forkert - satte article.innerHTML til opskriftens HTML og
-//      forsøgte BAGEFTER at wrappe en variabel "indhold", som aldrig var
-//      defineret, i et <a> - det gav en ReferenceError, som stoppede
-//      hele kortet fra at blive lavet)
-//   4. Hvis recipe.link findes:
-//        - pak HELE indholdet ind i et <a href="...">
-//      Ellers:
-//        - vis kortet uden link, som normalt
-//      (Samme mønster som createChefCard - RETTET: brugte fejlagtigt
-//      class="chef-card-link" i stedet for en klasse der giver mening
-//      for opskrift-cards, fx "recipe-card-link")
-//   5. Sæt baggrundsbillede (finder .funktions INDE i det indsatte
-//      indhold, uanset om det er wrappet i et <a> eller ej)
+
+//   1. Opretter tomt <article>
+//   2. Hentter data
+//   3.Laver alt html med innerHTML
+//   4. Tjekker om der er et link i koden, hvis der er linker den til den opskrift, hvis ikke giver den cursor pointer 
+//   5. Sætter baggrundsbillede ind i artiklen
 //   6. Returnér article
 function createRecipeCard(recipe) {
     const article = document.createElement('article');
