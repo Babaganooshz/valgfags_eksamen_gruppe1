@@ -27,6 +27,7 @@ body {
     --heading1:48px;
     --heading2:32px;
     --heading3:24px;
+    --heading3:16px;
 
     --bigTekst:20px;
     --mediumTekst:16px;
@@ -627,5 +628,24 @@ article:hover{
             }
            }
         }
+    }
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    align-items:baseline;
+    gap: var(--mediumSpacer);
+    background-color: var(--teal);
+    color: var(--lightCreme);
+  
+
+    article{
+          margin: var(--xLargeSpacer);
+    }
+
+    h4{
+        font-size: var(--heading4);
     }
 }
