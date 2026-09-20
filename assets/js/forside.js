@@ -1,7 +1,7 @@
 // Data til articles
 const recipes = [
     {
-        image: '../assets/img/opskrifter/mexican_16x9.jpg',
+        image: 'assets/img/opskrifter/mexican_16x9.jpg',
         title: 'Lasagne al forno',
         description: 'This is Marys classic lasagne recipe which has been perfected over the years...',
         time: '2h 30min',
@@ -10,7 +10,7 @@ const recipes = [
         link: 'opskrift.html'
     },
     {
-        image: '../assets/img/opskrifter/easy_spaghetti_bolognese_93639_16x9.jpg',
+        image: 'assets/img/opskrifter/easy_spaghetti_bolognese_93639_16x9.jpg',
         title: 'Easy spaghetti bolognese',
         description: 'Everyone needs a basic spaghetti bolognese recipe that still tastes great...',
         time: '1h ',
@@ -18,7 +18,7 @@ const recipes = [
         level: 'Easy'
     },
     {
-        image: '../assets/img/opskrifter/fluffyamericanpancak_74828_16x9.jpg',
+        image: 'assets/img/opskrifter/fluffyamericanpancak_74828_16x9.jpg',
         title: 'Fluffy American Pancakes',
         description: 'This easy American pancake recipe makes really light and fluffy pancakes that are great...',
         time: '40min ',
@@ -26,7 +26,7 @@ const recipes = [
         level: 'Easy'
     },
     {
-        image: '../assets/img/opskrifter/classiccottagepie_90765_16x9.jpg',
+        image: 'assets/img/opskrifter/classiccottagepie_90765_16x9.jpg',
         title: 'Easy cottage pie',
         description: 'James Martins easy cottage pie recipe is a family favourite...',
         time: '40min ',
@@ -34,7 +34,7 @@ const recipes = [
         level: 'Easy'
     },
     {
-        image: '../assets/img/opskrifter/roasted_butternut_squash_10281_16x9.jpg',
+        image: 'assets/img/opskrifter/roasted_butternut_squash_10281_16x9.jpg',
         title: 'Butternut squash soup',
         description: 'This easy butternut squash soup recipe is flavoured with red pepper and ginger and then blended until silky smooth...',
         time: '1h ',
@@ -51,13 +51,13 @@ const tips = [
         description: 'Learn Round fish include fish such as mackerel, sea bass, sea bream, haddock, mullet, pollack, snapper and John Dory. Scaling fish is a messy job - you can ask your fishmonger to do it for you but its easy once you know how (put the fish in a clean bin liner when removing the scales and guts to minimise mess)...',
     },
     {
-        image: '../assets/img/tips/jk-sloan-9zLa37VNL38-unsplash.jpg',
+        image: 'assets/img/tips/jk-sloan-9zLa37VNL38-unsplash.jpg',
         alt: 'chicken',
         title: 'Spatchcocking chicken and poultry',
         description: 'Spatchcocking means to split open and flatten out a bird for grilling or barbecuing. This speeds up the cooking time and ensures more even cooking. When spatchcocking, be sure to remove the straight spinal column from the bird, and NOT the curved breast bone at the front of the bird....',
     },
     {
-        image: '../assets/img/tips/pasta.jpg',
+        image: 'assets/img/tips/pasta.jpg',
         alt: 'pasta',
         title: 'How to make fresh pasta by hand',
         description: 'Making pasta isnt as difficult as you might think - you may need a pasta machine, but if you have a rolling pin and a strong pair of arms you can hand roll it. Once you have mixed the eggs into the flour you should knead it for 10-15 minutes, or until the dough is smooth and elastic. This also takes a fair amount of elbow grease...',
@@ -68,9 +68,9 @@ const tips = [
 const chefs = [
     {
         navn: 'Mads Jensen',
-        image: '../assets/img/chefs/mads.avif',
+        image: 'assets/img/chefs/mads.avif',
         rolle: 'Professionel chef',
-        link: '../chef.html'
+        link: 'chef.html'
     },
     {
         navn: 'Xiaomei Lee',
@@ -79,34 +79,34 @@ const chefs = [
     },
     {
         navn: 'Antonio Devicienti',
-        image: '../assets/img/chefs/antonio.avif',
+        image: 'assets/img/chefs/antonio.avif',
         rolle: 'Professionel chef',
     },
     {
         navn: 'Sami Zayn',
-        image: '../assets/img/chefs/sami.avif',
+        image: 'assets/img/chefs/sami.avif',
         rolle: 'Professionel chef',
     },
     {
         navn: 'Sophie Turner',
-        image: '../assets/img/chefs/sophie.avif',
+        image: 'assets/img/chefs/sophie.avif',
         rolle: 'Amateur cook',
     },
     {
         navn: 'Adam Henderson',
-        image: '../assets/img/chefs/adam.avif',
+        image: 'assets/img/chefs/adam.avif',
         rolle: 'Amateur cook',
     }
 ];
 
 const brands = [
     {
-        image: '../assets/img/savernake-knives-tyDgjiJbz54-unsplash.jpg',
+        image: 'assets/img/savernake-knives-tyDgjiJbz54-unsplash.jpg',
         title: 'Savernake knives',
         description: 'If youre looking for high-quality knives, I would recommend the brand savernake. They are well known for their durability, quality materials, and reliable performance'
     },
     {
-        image: '../assets/img/odiseo-castrejon-xPPoMWL4r_A-unsplash.jpg',
+        image: 'assets/img/odiseo-castrejon-xPPoMWL4r_A-unsplash.jpg',
         title: 'Le muse',
         description: 'If youre looking for high-quality cast iron pot, I would recommend the brand le muse. They are well known for their durability, quality materials, and reliable performance'
     }

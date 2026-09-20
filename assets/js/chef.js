@@ -43,7 +43,8 @@ const chefrecipes = [
         description: 'This is Marys classic lasagne recipe which has been perfected over the years...',
         time: '2h 30min',
         cuisine: 'Italien',
-        level: 'Easy'
+        level: 'Easy',
+         link: 'opskrift.html'
     },
     {
         image: './assets/img/opskrifter/easy_spaghetti_bolognese_93639_16x9.jpg',
@@ -121,10 +122,10 @@ const filled = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634
 function createRecipeCard(recipe) {
     const article = document.createElement('article');
 
-    const { title, description, time, cuisine, level } = recipe;
+    const { title, description, time, cuisine, level, link } = recipe;
 
-    // anvender innerhtml for at opsætte vores recipe card ud fra vores div i html. 
-    article.innerHTML = `
+    // variabel for at indsætte link til opskrift, hvis opskrift har link
+    const indhold = `
     
         <div class="funktions">
             <div class="tags">
@@ -158,6 +159,14 @@ function createRecipeCard(recipe) {
             <p>${description}</p>
         </div>
     `;
+
+       if (link) {
+        // Opskriften får et link
+        article.innerHTML = `<a href="${link}" class="recipe-card-link">${indhold}</a>`;
+    } else {
+        // Intet link angivet -> vis kortet uden link, som normalt
+        article.innerHTML = indhold;
+    }
 
     // Ænder baggrundsbilledet for hver article
     const funktions = article.querySelector('.funktions');
