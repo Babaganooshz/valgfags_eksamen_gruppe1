@@ -87,6 +87,13 @@ body {
             
         }
 
+        li:last-child:hover{
+                   color: var(--lightCreme);
+                background-color: var(--teal);
+                 border-radius: 0px;
+                 padding: 0px var(--xsSpacer);
+        }
+
         .userbtn{
           padding: 0rem var(--mediumSpacer);
             background-color: var(--teal);
@@ -105,6 +112,7 @@ body {
 
             
         }
+
 
     }
 
@@ -171,6 +179,21 @@ transform: translateX(0);
        margin: var(--xLargeSpacer);
 }
 
+/* Scrollbar */
+
+.chef-cards::-webkit-scrollbar, .recipe-cards::-webkit-scrollbar, .tip-cards::-webkit-scrollbar{
+     height: 20px;
+}
+
+.chef-cards::-webkit-scrollbar-thumb, .recipe-cards::-webkit-scrollbar-thumb, .tip-cards::-webkit-scrollbar-thumb{
+    background: #4D8C75;
+    border-radius: 10px;
+}
+
+.chef-cards::-webkit-scrollbar-track, .recipe-cards::-webkit-scrollbar-track, .tip-cards::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
+
 /* Forside header */
 .forsideHeader{
     height: 250px;
@@ -218,6 +241,21 @@ transform: translateX(0);
         }
     }
 }
+/* sektions titler */
+.top-section{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: var(--xLargeSpacer);
+        margin-bottom: 5px;
+
+    .more{
+        color: var(--darkRed);
+        align-self:center;
+    }
+
+  
+}
 
 /* Opskrifter */
 
@@ -227,18 +265,34 @@ transform: translateX(0);
 
     .recipe-cards{
     display: flex;
-    gap: var(--smallSpacer);
+    gap: var(--mediumSpacer);
     max-width: 100%;
-    overflow-y: auto;
-    scrollbar-width: thin;
+    overflow-x: auto;
+    padding: var(--smallSpacer) var(--xsSpacer);
     }
+
+    .recipe-card-link{
+    display: block;  
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--darkRed); 
+    cursor: pointer;
+    }
+
+article:hover{
+     transform: scale(1.1);
+}
 
     article{
         width: 350px;
         border-radius: 10px;
         flex-shrink: 0;
-        border: 2px solid var
-        (--darkRed);
+       border: 2px solid #400106;
+       box-shadow: 2px 2px 10px black;
+       text-decoration: none;
+       color: var(--darkRed);
+       
         .recipe-text{
             margin: 0 auto;
             padding: 5px;
@@ -253,6 +307,7 @@ transform: translateX(0);
               }
             }
         }
+       
     }
       p{
                     margin-top:5px;
@@ -311,9 +366,7 @@ transform: translateX(0);
                 color: var(--lightCreme);
                 font-weight: bold;
                 padding: 5px;
-            }
-
-            .favorite{
+                box-shadow: 2px 2px 5px black;
                 cursor: pointer;
             }
 
@@ -334,6 +387,7 @@ transform: translateX(0);
         .favorite{
             width: 24px;
             height: 24px;
+            cursor: pointer;
         }
     }
 }
@@ -344,18 +398,28 @@ transform: translateX(0);
        margin:0rem var(--xLargeSpacer) ;
        color: var(--darkRed);
 }
+
+
 .tip-cards{
     display: flex;
-overflow-x: scroll;
-flex-shrink: 0;
-      gap: var(--smallSpacer);
-              scrollbar-width: thin;
-        
+    overflow-x: scroll;
+    flex-shrink: 0;
+    gap: var(--largeSpacer);
+     padding: var(--smallSpacer) var(--mediumSpacer);
+     overflow-y: hidden;
+    
+     article:hover{
+     transform: scale(1.1);
+}
+
 
     article{
         display: grid;
         grid-template-columns: 1fr 2fr;
         border: 4px solid var(--darkRed);
+        box-shadow: 2px 2px 10px black;
+        cursor: pointer;
+
 
         .tekst{
             margin: 0 auto;
@@ -393,9 +457,23 @@ flex-shrink: 0;
         display: flex;
         overflow-x: scroll;
         overflow-y:hidden ;
-        gap: var(--xsSpacer);
+        gap: var(--smallSpacer);
         flex-shrink: 0;
+         padding: var(--xsSpacer) var(--mediumSpacer);
+
         
+    .chef-card-link {
+    display: block;  
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--darkRed); 
+    cursor: pointer;
+}
+
+article:hover{
+     transform: scale(1.1);
+}
       
         article{
               width: 250px;
@@ -404,6 +482,9 @@ flex-shrink: 0;
             background-size: cover;
              flex-shrink: 0;
              border-radius: 10px;
+             box-shadow: 2px 2px 10px black;
+
+
 
             .tekst{
                 padding: 5px;
@@ -417,13 +498,113 @@ flex-shrink: 0;
 
                 }
                      p{
-                         padding:  5px 10px;
-                        border-radius: 50px;  
+                         padding:  3px 10px;
+                        border-radius: 20px;  
                         height: 24px;     
-                        align-self: first baseline;               background-color: var(--teal);
+                        align-self: first baseline;        box-shadow: 2px 2px 10px black;     background-color: var(--teal);
+                        margin: 5px 0px;
                         
                     }
+                    .bottom{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                       
+                        button{
+                         border-radius: 20px;
+                        background-color: var(--lightCreme);
+                        border: none;
+                        width: 80px;
+                        align-items: center;
+                        justify-items: center;
+                        display: flex;
+                        padding: 0px 5px;
+                        height: 25px;
+                        color: var(--teal);
+                        font-weight: bold;
+                        cursor: pointer;
+                        box-shadow: 2px 2px 10px black;
+
+                        }
+                        
+
+                        span{
+                            border: 1px solid var(--teal);
+                            border-radius: 100px;
+                            margin: -5px 5px;
+                            padding:0px;
+                            align-self: center;
+                            display: flex;
+                        }
+                    }
             }
+        }
+    }
+}
+
+/* Brands */
+
+.brands{
+    margin: var(--xLargeSpacer);
+    gap: var(--smallSpacer);
+    
+    .brand-cards{
+        display: flex;
+        gap: var(--smallSpacer);
+        scrollbar-width: thin;
+        padding-bottom: var(--xsSpacer);
+
+        
+        article{
+            width: 590px;
+            flex-shrink: 0;
+            color: var(--lightCreme);
+            background-color: var(--orange);
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px black;
+            cursor: pointer;
+
+            img{
+                width: 590px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 10px 10px 0px 0px;
+            }
+
+
+           h3, p{
+            padding: 10px;
+           }
+
+           h3{
+            margin: 0;
+            font-size:var(--heading3)
+           }
+
+           p{
+            margin: 0;
+             max-width: 80%;
+           }
+
+           .bottom-tekst{
+            display: flex;
+            align-items: center;
+
+            button{
+                width: 115px;
+                border: none;
+                border-radius: 10px;
+                color: var(--lightCreme);
+                background-color: var(--darkRed);
+                display: flex;
+                height: 40px;
+                align-items: center;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: #D9985F;
+            }
+           }
         }
     }
 }
