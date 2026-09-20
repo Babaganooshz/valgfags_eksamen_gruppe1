@@ -475,3 +475,22 @@
 
 
 /* chefs cards slut */
+
+/* Footer */
+
+footer{
+    display: flex;
+    align-items:baseline;
+    gap: var(--mediumSpacer);
+    background-color: var(--teal);
+    color: var(--lightCreme);
+  
+
+    article{
+          margin: var(--xLargeSpacer);
+    }
+
+    h4{
+        font-size: var(--heading4);
+    }
+}
