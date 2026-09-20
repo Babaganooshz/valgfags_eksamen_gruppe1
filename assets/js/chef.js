@@ -304,17 +304,23 @@ function createChefCard(chef) {
     //anvender if/else for at kunne skelne mellem pro.chef og am.cook
     if (chef.rolle === 'Professionel chef') {
         article.innerHTML = `
-        <div class="tekst">
+              <div class="tekst">
             <h3>${navn}</h3>
-            <p class="professionel">${rolle}</p>
+            <div class="bottom">
+                <p class="professionel">${rolle}</p>
+                <button>Follow <span><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="20px" fill="#4D8C75"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span></button>
+            </div>
         </div>
     `;
 
     } else {
         article.innerHTML = `
-         <div class="tekst">
+             <div class="tekst">
             <h3>${navn}</h3>
-            <p class="amateur">${rolle}</p>
+            <div class="bottom">
+                <p class="amateur">${rolle}</p>
+                <button>Follow <span><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="20px" fill="#4D8C75"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span></button>
+            </div>
         </div>
     `;
     }

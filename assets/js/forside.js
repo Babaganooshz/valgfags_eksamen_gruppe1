@@ -1,7 +1,7 @@
 // Data til articles
 const recipes = [
     {
-        image: './assets/img/opskrifter/mexican_16x9.jpg',
+        image: '../assets/img/opskrifter/mexican_16x9.jpg',
         title: 'Lasagne al forno',
         description: 'This is Marys classic lasagne recipe which has been perfected over the years...',
         time: '2h 30min',
@@ -10,7 +10,7 @@ const recipes = [
         link: 'opskrift.html'
     },
     {
-        image: './assets/img/opskrifter/easy_spaghetti_bolognese_93639_16x9.jpg',
+        image: '../assets/img/opskrifter/easy_spaghetti_bolognese_93639_16x9.jpg',
         title: 'Easy spaghetti bolognese',
         description: 'Everyone needs a basic spaghetti bolognese recipe that still tastes great...',
         time: '1h ',
@@ -18,7 +18,7 @@ const recipes = [
         level: 'Easy'
     },
     {
-        image: './assets/img/opskrifter/fluffyamericanpancak_74828_16x9.jpg',
+        image: '../assets/img/opskrifter/fluffyamericanpancak_74828_16x9.jpg',
         title: 'Fluffy American Pancakes',
         description: 'This easy American pancake recipe makes really light and fluffy pancakes that are great...',
         time: '40min ',
@@ -26,7 +26,7 @@ const recipes = [
         level: 'Easy'
     },
     {
-        image: './assets/img/opskrifter/classiccottagepie_90765_16x9.jpg',
+        image: '../assets/img/opskrifter/classiccottagepie_90765_16x9.jpg',
         title: 'Easy cottage pie',
         description: 'James Martins easy cottage pie recipe is a family favourite...',
         time: '40min ',
@@ -34,7 +34,7 @@ const recipes = [
         level: 'Easy'
     },
     {
-        image: './assets/img/opskrifter/roasted_butternut_squash_10281_16x9.jpg',
+        image: '../assets/img/opskrifter/roasted_butternut_squash_10281_16x9.jpg',
         title: 'Butternut squash soup',
         description: 'This easy butternut squash soup recipe is flavoured with red pepper and ginger and then blended until silky smooth...',
         time: '1h ',
@@ -45,19 +45,19 @@ const recipes = [
 
 const tips = [
     {
-        image: 'assets/img/tips/fish.jpg',
+        image: 'assets/img/tips/miikka-luotio-PnMBEIFtBnc-unsplash.jpg',
         alt: 'fish',
         title: 'How to Scaling, gutting and cleaning a round fish',
         description: 'Learn Round fish include fish such as mackerel, sea bass, sea bream, haddock, mullet, pollack, snapper and John Dory. Scaling fish is a messy job - you can ask your fishmonger to do it for you but its easy once you know how (put the fish in a clean bin liner when removing the scales and guts to minimise mess)...',
     },
     {
-        image: 'assets/img/tips/kylling.jpg',
+        image: '../assets/img/tips/jk-sloan-9zLa37VNL38-unsplash.jpg',
         alt: 'chicken',
         title: 'Spatchcocking chicken and poultry',
         description: 'Spatchcocking means to split open and flatten out a bird for grilling or barbecuing. This speeds up the cooking time and ensures more even cooking. When spatchcocking, be sure to remove the straight spinal column from the bird, and NOT the curved breast bone at the front of the bird....',
     },
     {
-        image: 'assets/img/tips/pasta.jpg',
+        image: '../assets/img/tips/pasta.jpg',
         alt: 'pasta',
         title: 'How to make fresh pasta by hand',
         description: 'Making pasta isnt as difficult as you might think - you may need a pasta machine, but if you have a rolling pin and a strong pair of arms you can hand roll it. Once you have mixed the eggs into the flour you should knead it for 10-15 minutes, or until the dough is smooth and elastic. This also takes a fair amount of elbow grease...',
@@ -68,45 +68,45 @@ const tips = [
 const chefs = [
     {
         navn: 'Mads Jensen',
-        image: 'assets/img/chefs/mads.avif',
+        image: '../assets/img/chefs/mads.avif',
         rolle: 'Professionel chef',
-        link: 'chef.html'
+        link: '../chef.html'
     },
     {
         navn: 'Xiaomei Lee',
-        image: 'assets/img/chefs/Xiaomei.avif',
+        image: '../assets/img/chefs/Xiaomei.avif',
         rolle: 'Professionel chef',
     },
     {
         navn: 'Antonio Devicienti',
-        image: 'assets/img/chefs/antonio.avif',
+        image: '../assets/img/chefs/antonio.avif',
         rolle: 'Professionel chef',
     },
     {
         navn: 'Sami Zayn',
-        image: 'assets/img/chefs/sami.avif',
+        image: '../assets/img/chefs/sami.avif',
         rolle: 'Professionel chef',
     },
     {
         navn: 'Sophie Turner',
-        image: 'assets/img/chefs/sophie.avif',
+        image: '../assets/img/chefs/sophie.avif',
         rolle: 'Amateur cook',
     },
     {
         navn: 'Adam Henderson',
-        image: 'assets/img/chefs/adam.avif',
+        image: '../assets/img/chefs/adam.avif',
         rolle: 'Amateur cook',
     }
 ];
 
 const brands = [
     {
-        image: 'assets/img/savernake-knives-tyDgjiJbz54-unsplash.jpg',
+        image: '../assets/img/savernake-knives-tyDgjiJbz54-unsplash.jpg',
         title: 'Savernake knives',
         description: 'If youre looking for high-quality knives, I would recommend the brand savernake. They are well known for their durability, quality materials, and reliable performance'
     },
     {
-        image: 'assets/img/odiseo-castrejon-xPPoMWL4r_A-unsplash.jpg',
+        image: '../assets/img/odiseo-castrejon-xPPoMWL4r_A-unsplash.jpg',
         title: 'Le muse',
         description: 'If youre looking for high-quality cast iron pot, I would recommend the brand le muse. They are well known for their durability, quality materials, and reliable performance'
     }
@@ -119,7 +119,7 @@ const filled = "m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634
 
 
 //   1. Opretter tomt <article>
-//   2. Hentter data
+//   2. Henter data
 //   3.Laver alt html med innerHTML
 //   4. Tjekker om der er et link i koden, hvis der er linker den til den opskrift, hvis ikke giver den cursor pointer 
 //   5. Sætter baggrundsbillede ind i artiklen
@@ -208,24 +208,40 @@ function createChefCard(chef) {
 
     const { navn, image, rolle, link } = chef;
 
-    const indhold = `
-        <div class="tekst">
+    let indhold;
+
+
+if (chef.rolle === 'Professionel chef') {
+        indhold = `
+              <div class="tekst">
             <h3>${navn}</h3>
             <div class="bottom">
-                <p>${rolle}</p>
+                <p class="professionel">${rolle}</p>
                 <button>Follow <span><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="20px" fill="#4D8C75"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span></button>
             </div>
         </div>
     `;
 
-    if (link) {
+     } else {
+        indhold= `
+             <div class="tekst">
+            <h3>${navn}</h3>
+            <div class="bottom">
+                <p class="amateur">${rolle}</p>
+                <button>Follow <span><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="20px" fill="#4D8C75"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span></button>
+            </div>
+        </div>
+    `;
+    }
+
+
+      if (link) {
         //   Hvis link bliver man ført videre til siden
         article.innerHTML = `<a href="${link}" class="chef-card-link">${indhold}</a>`;
     } else {
         //   Viser stadig cardet og ser ud til det virker, men har intet link
         article.innerHTML = indhold;
     }
-
     // Sætter chef billede ind som baggrundsbillede
     article.style.backgroundImage = `url("${image}")`;
 
