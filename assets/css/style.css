@@ -637,6 +637,10 @@ article:hover{
 
 /* Footer */
 
+.cr{
+    text-align: center;
+}
+
 footer{
     display: flex;
     align-items:baseline;

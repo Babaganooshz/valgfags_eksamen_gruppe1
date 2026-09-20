@@ -2,381 +2,331 @@
 <html lang="da">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forloren Hare - Opskrift</title>
-  <meta name="description" content="Opskrift på Forloren Hare - med ingredienser der skalerer efter antal personer.">
+  <title>Lasagne al Forno - The Food Network</title>
+  <meta name="description" content="Recipe for Lasagne al Forno.">
 
   <link rel="stylesheet" href="./assets/css/opskrift.css">
   	<script src="./assets/js/opskrift.js" defer></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap" rel="stylesheet">
-    
-  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
 <body>
 
 <!-- NAV -->
+<nav>
+		<a class="logo" href="../index.html">
+		<img src="./assets/img/Logo.svg" alt="The Food Network" >
+		<h1>The Food Network</h1>
+		</a>
+		<ul>
+			<li>Recipes</li>
+			<li>Chefs & Cooks</li>
+			<li>Tips & Advice</li>
+			<li>Kitchenware &amp; Utensils</li>
+			<li>
+				<button class="userbtn">
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" height="64px" viewBox="0 -960 960 960" width="64px"
+							fill="#F3F1EC" aria-hidden="true">
+							<path
+								d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm146.5-204.5Q340-521 340-580t40.5-99.5Q421-720 480-720t99.5 40.5Q620-639 620-580t-40.5 99.5Q539-440 480-440t-99.5-40.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
+						</svg>
+						My profile
+					</span>
+				</button>
+			</li>
+		</ul>
+	</nav>
 
+	<aside class="user-aside">
+		<ul>
+			<li>My recipes</li>
+			<li>My Tips &amp; Advice</li>
+			<li>My messages</li>
+			<li>My favorites</li>
+			<li>Settings</li>
+		</ul>
+	</aside>
 <main class="page">
-  <div class="recipe">
-    <div class="recipe__info">
-      <nav class="crumbs" aria-label="Brødkrumme">
+
+  <div class="recipe-layout">
+
+    <!-- Venstre kolonne -->
+    <div class="recipe-left-column">
+
+      <div class="breadcrumbs">
         <ol>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Recipies</a></li>
-          <li aria-current="page">Lasagne al forno</li>
+          <li><a href="./index.html">Forside</a></li>
+          <li><a href="#">Opskrifter</a></li>
+          <li>Lasagne al forno</li>
         </ol>
-      </nav>
-
-      <h1>Lasange al forno</h1>
-
-      <div class="ratingline">
-        <span class="stars" style="--rating:3" role="img" aria-label="3 ud af 5 stjerner"></span>
-        <span>(67)</span>
-        <a href="#kommentarer">&gt; Kommentarer (29)</a>
       </div>
 
-      <div class="author">
-        <img alt="Mads Jensen" width="56" height="56"
-             src="./assets/img/chefs/mads.avif">
+      <h1>Lasagne al forno</h1>
+
+      <div class="rating-line">
+        <span class="star-rating" title="3 ud af 5 stjerner">★★★☆☆</span>
+        <span>(67)</span>
+        <a href="#kommentarer" > Kommentarer (29)</a>
+      </div>
+
+      <a class="author" href="./chef.html">
+        <img alt="Mads Jensen" width="56" height="56" src="./assets/img/chefs/mads.avif">
         <p>
           <strong>Mads Jensen</strong>
           <span>har udgivet denne opskrift</span>
         </p>
-      </div>
+      </a>
 
-      <p class="intro">
+      <p class="recipe-intro">
         This is Mads' classic lasagne recipe which has been perfected over the years. For the best results leave the lasagne to stand for six hours before cooking.
+
+        Each serving provides 861 kcal, 50g protein, 56g carbohydrates (of which 17g sugars), 47g fat (of which 23g saturates), 5.5g fibre and 1.4g salt.
       </p>
 
-      <ul class="facts">
-        <li><img class="icon" src="./assets/img/svg/schedule_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="time" aria-hidden="true"> 2h 30min</li>
-        <li><img class="icon" src="./assets/img/svg/globe_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="cuisine" aria-hidden="true"> DK</li>
-        <li><img class="icon" src="./assets/img/svg/chef_hat_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="" aria-hidden="Level"> Easy</li>
-
+      <ul class="recipe-facts">
+        <li><img class="icon" src="./assets/img/svg/schedule_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="time"> Less than 30 mins</li>
+        <li><img class="icon" src="./assets/img/svg/globe_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="cuisine"> Italian</li>
+        <li><img class="icon" src="./assets/img/svg/chef_hat_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Level"> Easy</li>
+        <li><img class="icon" src="./assets/img/svg/frosted.svg" alt="Frocen"> Can be frozen</li>
       </ul>
 
-      <!-- ---------- Ingrediensliste ---------- -->
-      <section class="ingredients" aria-labelledby="ing-title">
-        <h2 id="ing-title">Ingredients</h2>
+      <!-- Ingrediensliste (til 4 personer) -->
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-servings">4 servings</p>
 
-        <div class="servings" role="group" aria-label="Antal personer">
-          <button type="button" id="servings-minus" aria-label="Færre personer">-</button>
-          <output id="servings-label" for="servings-minus servings-plus">4 people</output>
-          <button type="button" id="servings-plus" aria-label="Flere personer">+</button>
-        </div>
-        <p class="sr-only" id="servings-status" role="status" aria-live="polite"></p>
+        <h3>For the ragu</h3>
+        <ul>
+          <li>2 tbsp olive oil</li>
+          <li>900g/2lb beef mince</li>
+          <li>2 onions, roughly chopped</li>
+          <li>4 sticks celery, finely chopped (optional)</li>
+          <li>2 garlic cloves, crushed</li>
+          <li>2 level tbsp plain flour</li>
+          <li>150ml/¼ pint beef stock</li>
+          <li>1 tbsp redcurrant jelly or 1 tsp caster sugar (optional)</li>
+          <li>3 tbsp tomato purée</li>
+          <li>1 tbsp chopped thyme</li>
+          <li>2 x 400g tins chopped tomatoes</li>
+        </ul>
 
-        <!--
-          Sådan tilføjer du en ingrediens:
-          data-amount = mængden til 4 personer
-          data-type   = "weight" (gram) eller udelad for stykker/spiseskeer
-          data-sg / data-pl på .name = ental / flertal (valgfrit)
-          Ingredienser uden data-amount ændres ikke (fx "uanede mængder").
-        -->
-        <ul id="ingredient-list">
-          <li data-amount="2" data-type="weight"><span class="qty">2 tbsp </span> <span class="name">Olive Oil</span></li>
-          <li data-amount="2"  data-type="weight"><span class="qty">2</span> <span class="name">Onions</span></li>
-          <li data-amount="4"><span class="qty">4 sticks</span> <span class="name">Sticks Celery</span></li>
-          <li data-amount="2"><span class="qty">2</span> <span class="name">garlic cloves</span></li>
-          <li data-amount="2"><span class="qty">2</span> <span class="name" data-sg="rød chilipeber, endu finere hakket" data-pl="røde chilipebere, endu finere hakket">rød chilipeber, endu finere hakket</span></li>
-          <li data-amount="850" data-type="weight"><span class="qty">850g</span> <span class="name">blandede grøntsager, i grove tern</span></li>
-          <li data-amount="400" data-type="weight"><span class="qty">400g</span> <span class="name">bacon</span></li>
-          <li data-amount="1"><span class="qty">1</span> <span class="name" data-sg="hel fennikel" data-pl="hele fennikler">hel fennikel</span></li>
-          <li><span class="name">uanede mængder spidskommen</span></li>
-          <li data-amount="3"><span class="qty">3</span> <span class="name" data-sg="grønt æble" data-pl="grønne æbler">grønne æbler</span></li>
-          <li data-amount="1"><span class="qty">1</span> <span class="name" data-sg="salmebog, de små synger" data-pl="salmebøger, de små synger">salmebog, de små synger</span></li>
-          <li data-amount="3"><span class="qty">3</span> <span class="name" data-sg="spiseske kardemomme" data-pl="spiseskeer kardemomme">spiseskeer kardemomme</span></li>
-          <li data-amount="40"><span class="qty">40</span> <span class="name">vaffel-rør</span></li>
+        <h3>For the white sauce</h3>
+        <ul>
+          <li>50g/2oz butter</li>
+          <li>50g/2oz plain flour</li>
+          <li>750ml/1¼ pints hot milk</li>
+          <li>2 tsp Dijon mustard</li>
+          <li>50g/2oz Parmesan, finely grated</li>
+          <li>salt and freshly ground black pepper</li>
+        </ul>
+
+        <h3>For the lasagne</h3>
+        <ul>
+          <li>12 lasagne sheets</li>
+          <li>75g/3oz mature cheddar, grated</li>
         </ul>
       </section>
+
     </div>
 
-    <div class="recipe__media">
+    <!-- Højre kolonne -->
+    <div class="recipe-right-column">
 
-      <div class="toolbar">
-        <button type="button" id="btn-copy" aria-label="Kopiér ingredienser" title="Kopiér ingredienser">
-          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+      <div class="recipe-toolbar">
+        <button type="button" id="copy-ingredients-button" title="Kopiér ingredienser">
+          <i class="fa-regular fa-copy" style="color: rgb(64, 1, 6);"></i>
         </button>
-        <button type="button" id="btn-save" aria-label="Gem opskrift" title="Gem opskrift" aria-pressed="false">
-          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        <button type="button" id="save-recipe-button" title="Gem opskrift">
+         <i class="fa-solid fa-heart" style="color: rgb(64, 1, 6);"></i>
         </button>
-        <button type="button" id="btn-share" aria-label="Del opskrift" title="Del opskrift">
-          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        <button type="button" id="share-recipe-button" title="Del opskrift">
+          <i class="fa-solid fa-share" style="color: rgb(64, 1, 6);"></i>
         </button>
-        <button type="button" id="btn-print" aria-label="Udskriv opskrift" title="Udskriv opskrift">
-          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        <button type="button" id="print-recipe-button" title="Udskriv opskrift">
+          <i class="fa-solid fa-print" style="color: rgb(64, 1, 6);"></i>
         </button>
       </div>
 
       <div class="recipe-card">
-        
-        <div class="hero">
+
+        <div class="main-image">
           <!-- MAIN IMG -->
-          <img src="placeholder.jpg" width="960" height="680"
-               alt="Skiver af forloren hare med brun sovs, kogte kartofler og ribsgele">
-          <ul class="tags">
-            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 240 min</li>
-            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Svendborg</li>
-            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          <img src="./assets/img/opskrifter/mexican_16x9.jpg" width="960" height="680" alt="Incredible Photo of a freshly made Lasagne al Forno">
+          <ul class="recipe-tags">
+            <li class="recipe-tag recipe-tag-time"><img class="icon" src="placeholder.jpg" alt=""> Less than 30 mins</li>
+            <li class="recipe-tag recipe-tag-country"><img class="icon" src="placeholder.jpg" alt=""> Italy</li>
+            <li class="recipe-tag recipe-tag-level"><img class="icon" src="placeholder.jpg" alt=""> Easy</li>
+
           </ul>
         </div>
 
-        <div class="story">
+        <div class="recipe-story">
           <h2>Foodstory</h2>
           <p>
-            Jeg var engang et smut i Indien, hvor de serverede noget i et gadekøkken, jeg vil tro har været forloren hare. Det smagte i hvertfald af hare og råd.<br>
-            - siden da, har jeg bestræbt mig på at efterleve drømmen.
+            I had a gap year in Italy, where i stayed with a family, who loved to cook traditional Italian food. One of those recipes was a lasagna produced with herbs from their garden. This lasagna is based on all the best produce from the southern region of Italy, where i stayed and reminds me of a warm afternoon overlooking the Meditarrinian sea.
           </p>
 
-          <div class="method">
-            <h2>Fremgangsmåde</h2>
-            <h3>Forloren Hare</h3>
+          <div class="recipe-method">
+            <h2>Method</h2>
+            
             <ol>
-              <li>Først gør vi sådan når vi vasker vor tøj, vasker vor tøj, vasker vor tøj</li>
-              <li>Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj</li>
-              <li>Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj tidligt mandag morgen. Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj</li>
-              <li>Først gør vi sådan når vi vasker vor tøj, vasker vor tøj, vasker vor tøj</li>
-              <li>Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj</li>
+              <li>Preheat the oven to 160C/140C Fan/Gas 3.</li>
+              <li>For the ragu, heat a large ovenproof frying pan or casserole until hot and add the oil. Cook the mince until browned all over. Remove from the heat and transfer to a plate.</li>
+              <li>Add the onion, celery (if using) and garlic to the pan and cook until softened. Return the meat to the pan and stir in the flour. Add the stock and bring to the boil. Add the redcurrant jelly (or sugar), tomato purée and thyme, then stir well.</li>
+              <li>Stir in the tinned tomatoes. Bring to the boil again, cover with a lid (or kitchen foil) and simmer in the oven for 1–1½ hours, or until the beef is tender.</li>
+              <li>For the white sauce, melt the butter in a saucepan. Add the flour and cook over the heat for one minute. Gradually whisk in the hot milk, whisking until thickened. Add the Dijon mustard and Parmesan and season generously with salt and pepper.</li>
+              <li>For the lasagne, put one third of the meat sauce in the base of a 2.3 litre/4 pint shallow ovenproof dish. Spoon one third of the white sauce on top. Season with salt and pepper. Arrange one layer of lasagne sheets on top.</li>
+              <li>Spoon half of the remaining meat sauce on top and then half of the white sauce. Season with salt and pepper. Put another layer of lasagne sheets on top, then the remaining meat sauce and remaining white sauce. Sprinkle over the cheddar.</li>
+              <li>Cover and place in the fridge for 6 hours before cooking (so that the pasta can start to soften and absorb some of the liquid from the sauces).</li>
+              <li>Preheat the oven to 200C/180C Fan/Gas 6.</li>
+              <li>Cook in the middle of the oven for about 45 minutes  or until golden brown on top, bubbling around the edges and the pasta is soft.</li>
             </ol>
           </div>
 
-          <div class="rate">
-            <h2>Giv vurdering</h2>
-            <div class="rate__stars" id="rate-stars">
-              <button type="button" class="rate__star" aria-label="Giv 1 stjerne"   aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-              <button type="button" class="rate__star" aria-label="Giv 2 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-              <button type="button" class="rate__star" aria-label="Giv 3 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-              <button type="button" class="rate__star" aria-label="Giv 4 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-              <button type="button" class="rate__star" aria-label="Giv 5 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+          <div class="rate-recipe">
+            <h2>Rate this recipe</h2>
+            <div class="rate-stars">
+              <button type="button" class="rate-star" title="Giv 1 stjerne"><img class="icon" src="./assets/img/svg/star-regular-full.svg" alt="Giv 1 stjerne"></button>
+              <button type="button" class="rate-star" title="Giv 2 stjerner"><img class="icon" src="./assets/img/svg/star-regular-full.svg" alt="Giv 2 stjerner"></button>
+              <button type="button" class="rate-star" title="Giv 3 stjerner"><img class="icon" src="./assets/img/svg/star-regular-full.svg" alt="Giv 3 stjerner"></button>
+              <button type="button" class="rate-star" title="Giv 4 stjerner"><img class="icon" src="./assets/img/svg/star-regular-full.svg" alt="Giv 4 stjerner"></button>
+              <button type="button" class="rate-star" title="Giv 5 stjerner"><img class="icon" src="./assets/img/svg/star-regular-full.svg" alt="Giv 5 stjerner"></button>
             </div>
-            <p class="rate__msg" id="rate-msg" role="status" aria-live="polite"></p>
+            <p class="rate-message" id="rate-message"></p>
           </div>
         </div>
+
       </div>
     </div>
+
   </div>
 
-  <!-- MODAL-KORT  (data-open peger på id'et på <dialog> nedenfor) -->
-  <section class="tips" aria-label="Gode råd og videoguides">
+  <!-- Tip-kort (data-open-modal peger på id'et på den modal, der skal åbnes) -->
+  <section class="tip-cards">
 
-    <button type="button" class="tip" data-open="modal-loeg">
-      <img alt="" src="placeholder.jpg">
-      <span class="tip__text">
-        <span class="tip__title">Sådan hakker du et løg</span>
-        <span class="tip__desc">Lær at hakke et løg hurtigt og jævnt med denne lette videoguide. Det er den bedste måde at hakke et løg på, uden at græde...</span>
+    <button type="button" class="tip-card" data-open-modal="modal-precook-pasta">
+      <img alt="lasagna plates" src="./assets/img/tips/parnis-azimi-V2O3QifCOos-unsplash.jpg">
+      <span class="tip-card-text">
+        <span class="tip-card-title">Do you cook pasta sheets before making lasagne?</span>
+        <span class="tip-card-description">Fresh pasta never needs to be precooked, but if you like a lot of pasta...</span>
       </span>
     </button>
 
-    <button type="button" class="tip" data-open="modal-hvidloeg">
-      <img alt="" src="placeholder.jpg">
-      <span class="tip__text">
-        <span class="tip__title">Sådan finthakker du hvidløg</span>
-        <span class="tip__desc">Se hvordan du skræller og finthakker hvidløg på få sekunder, så smagen fordeler sig jævnt i retten...</span>
+    <button type="button" class="tip-card" data-open-modal="modal-cover-lasagne">
+      <img alt="Uncovered lasagne" src="./assets/img/tips/kristine-tumanyan-E_bGSbXb12I-unsplash.jpg">
+      <span class="tip-card-text">
+        <span class="tip-card-title">Is it better to bake lasagne covered or uncovered?</span>
+        <span class="tip-card-description">It really depends how you like your lasagne. Covering the top with foil will keep moisture in...</span>
       </span>
     </button>
 
-    <button type="button" class="tip" data-open="modal-fennikel">
-      <img alt="" src="placeholder.jpg">
-      <span class="tip__text">
-        <span class="tip__title">Sådan skærer du fennikel</span>
-        <span class="tip__desc">En kort guide til at gøre fennikelknolden klar og skære den i tynde, ensartede skiver eller tern...</span>
+    <button type="button" class="tip-card" data-open-modal="modal-make-ahead">
+      <img alt="lasagna" src="./assets/img/tips/david-trinks-NqZVozT5vnI-unsplash.jpg">
+      <span class="tip-card-text">
+        <span class="tip-card-title">How far in advance can you make lasagne before cooking it?</span>
+        <span class="tip-card-description">You can assemble a lasagne up to 2 days in advance and keep it in the fridge...</span>
       </span>
     </button>
+
   </section>
 
-  <!-- ---------- Modaler ---------- -->
-  <dialog class="modal" id="modal-loeg" aria-labelledby="modal-loeg-title">
-    <div class="modal__inner">
-      <button type="button" class="modal__close" aria-label="Luk"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-      <div class="modal__scroll">
-        <!-- VIDEO: erstat .modal__media med et <iframe> eller <video> -->
-        <div class="modal__media">
-          <img alt="" src="placeholder.jpg">
-          <span class="modal__play" aria-hidden="true"></span>
+  <!-- Modaler -->
+  <dialog class="modal" id="modal-precook-pasta">
+    <div class="modal-box">
+      <button type="button" class="modal-close-button" title="Luk"> <i class="fa-solid fa-xmark" style="color: rgb(64, 1, 6);"></i></button>
+      <div class="modal-scroll-area">
+        <div class="modal-image">
+          <img alt="" src="./assets/img/tips/parnis-azimi-V2O3QifCOos-unsplash.jpg">
         </div>
-        <div class="modal__body">
-          <h2 id="modal-loeg-title">Sådan hakker du et løg</h2>
-          <p>Lær at hakke et løg hurtigt og jævnt med denne lette videoguide. Metoden giver ensartede stykker, så løgene steger jævnt og ikke brænder på i kanten.</p>
-          <h3>Sådan gør du</h3>
-          <ol>
-            <li>Skær løget over fra top til rod, men lad roden sidde.</li>
-            <li>Læg den halve løg med snitfladen nedad og skræl skallen af.</li>
-            <li>Skær 2-3 vandrette snit ind mod roden, uden at skære helt igennem.</li>
-            <li>Skær lodrette snit fra top mod rod - jo tættere, jo finere hakket.</li>
-            <li>Skær på tværs, så falder løget af i små, ensartede tern.</li>
-          </ol>
-          <p class="modal__note">Tip: Sæt løget i køleskabet en halv time før, så tirrer det mindre i øjnene.</p>
+        <div class="modal-content">
+          <h2>Do you cook pasta sheets before making lasagne?</h2>
+          <p>Fresh pasta never needs to be precooked, but if you like a lot of pasta in your lasagne and are using dried pasta sheets you should consider it. It’s not necessary when making the recipe above, as the ratio of sauce to pasta, plus letting it stand for hours before cooking, means the pasta will be thoroughly cooked. If you are using a lower ratio of sauce to pasta and don’t have time to let it sit for hours before cooking, you might find the pasta is still chewy.</p>
         </div>
       </div>
     </div>
   </dialog>
 
-  <dialog class="modal" id="modal-hvidloeg" aria-labelledby="modal-hvidloeg-title">
-    <div class="modal__inner">
-      <button type="button" class="modal__close" aria-label="Luk"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-      <div class="modal__scroll">
-        <div class="modal__media">
-          <img alt="" src="placeholder.jpg">
-          <span class="modal__play" aria-hidden="true"></span>
+  <dialog class="modal" id="modal-cover-lasagne">
+    <div class="modal-box">
+      <button type="button" class="modal-close-button" title="Luk"><i class="fa-solid fa-xmark" style="color: rgb(64, 1, 6);"></i></button>
+      <div class="modal-scroll-area">
+        <div class="modal-image">
+          <img alt="" src="./assets/img/tips/kristine-tumanyan-E_bGSbXb12I-unsplash.jpg">
         </div>
-        <div class="modal__body">
-          <h2 id="modal-hvidloeg-title">Sådan finthakker du hvidløg</h2>
-          <p>Se hvordan du skræller og finthakker hvidløg på få sekunder, så smagen fordeler sig jævnt i retten.</p>
-          <h3>Sådan gør du</h3>
-          <ol>
-            <li>Læg fedet under den flade side af en stor kniv og pres let, så skallen løsner sig.</li>
-            <li>Skræl skallen af og skær den hårde rodende af.</li>
-            <li>Skær fedet i tynde skiver, og skær skiverne i strimler.</li>
-            <li>Hak strimlerne på tværs, indtil stykkerne er så fine, du ønsker.</li>
-          </ol>
-          <p class="modal__note">Tip: Steg hvidløg ved middel varme - det bliver bittert, hvis det brænder på.</p>
+        <div class="modal-content">
+          <h2>Is it better to bake lasagne covered or uncovered?</h2>
+          <p>It really depends how you like your lasagne. Covering the top with foil will keep moisture in, which helps the pasta to cook through and results in a soft, saucy lasagne. But if crispy edges are your thing then you are best leaving off the foil. Often the best way is to do a bit of both – cover with foil at first, then remove for the final 15 minutes to allow the top to crisp up.</p>
         </div>
       </div>
     </div>
   </dialog>
 
-  <dialog class="modal" id="modal-fennikel" aria-labelledby="modal-fennikel-title">
-    <div class="modal__inner">
-      <button type="button" class="modal__close" aria-label="Luk"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-      <div class="modal__scroll">
-        <div class="modal__media">
-          <img alt="" src="placeholder.jpg">
-          <span class="modal__play" aria-hidden="true"></span>
+  <dialog class="modal" id="modal-make-ahead">
+    <div class="modal-box">
+      <button type="button" class="modal-close-button" title="Luk"><i class="fa-solid fa-xmark" style="color: rgb(64, 1, 6);"></i></button>
+      <div class="modal-scroll-area">
+        <div class="modal-image">
+          <img alt="" src="./assets/img/tips/david-trinks-NqZVozT5vnI-unsplash.jpg">
         </div>
-        <div class="modal__body">
-          <h2 id="modal-fennikel-title">Sådan skærer du fennikel</h2>
-          <p>En kort guide til at gøre fennikelknolden klar og skære den i tynde, ensartede skiver eller tern.</p>
-          <h3>Sådan gør du</h3>
-          <ol>
-            <li>Skær stilkene og de fine grønne top-blade af - gem toppen til pynt.</li>
-            <li>Fjern det yderste, seje lag, hvis det er misfarvet.</li>
-            <li>Del knolden i to fra top til bund og skær den hårde kerne ud i en V-form.</li>
-            <li>Læg de to halvdele med snitfladen nedad og skær dem i tynde skiver eller tern.</li>
-          </ol>
-          <p class="modal__note">Tip: Fennikel i tynde skiver kan spises rå - og bliver sød og mild, når den steges.</p>
+        <div class="modal-content">
+          <h2>How far in advance can you make lasagne before cooking it?</h2>
+          <p>You can assemble a lasagne up to 2 days in advance and keep it in the fridge until ready to cook. Alternatively, freeze your uncooked lasagne for up to 3 months.</p>
+          <p>If you don't want your baking dish in the freezer for weeks on end, line your dish with baking paper or kitchen foil with enough overhang to cover the top before assembling the lasagne. Once the lasagne is assembled, cover the top with the overhang and freeze. Once it is frozen solid it will easily slip out of the dish. Wrap it again with cling film or foil and return to the freezer. When you are ready to cook it, remove the outer wrapping and pop it straight back into the dish. Frozen lasagne takes much longer to cook (around double the time), so cover the top with kitchen foil to prevent it drying out.</p>
         </div>
       </div>
     </div>
   </dialog>
 
-  <!-- RELATEREDE OPSKRIFTER -->
-  <section class="related" aria-labelledby="related-title">
-    <h2 id="related-title">Relaterede Opskrifter</h2>
+  <!-- Relaterede opskrifter (scroller sidelæns, 3 kort er synlige ad gangen) -->
+  <section class="related-recipes">
+    <h2>Relaterede Opskrifter</h2>
 
-    <div class="rail" id="rail" tabindex="0" role="region" aria-label="Relaterede opskrifter - scroll sidelæns">
+    <div class="related-recipes-scroll">
 
-      <article class="rcard">
-        <div class="rcard__media">
-          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
-          <ul class="tags">
-            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 2 h 30 min</li>
-            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Italien</li>
-            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
-          </ul>
-          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Lasagne al forno som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-        </div>
-        <div class="rcard__body">
-          <div class="rcard__head">
-            <h3 class="rcard__title"><a href="#">Lasagne al forno</a></h3>
-            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
-          </div>
-          <p class="rcard__desc">This is Mary's classic lasagne recipe which has been perfected over the years...</p>
-        </div>
-      </article>
 
-      <article class="rcard">
-        <div class="rcard__media">
-          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
-          <ul class="tags">
-            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 1 hour</li>
-            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Italien</li>
-            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
-          </ul>
-          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Easy spaghetti bolognese som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-        </div>
-        <div class="rcard__body">
-          <div class="rcard__head">
-            <h3 class="rcard__title"><a href="#">Easy spaghetti bolognese</a></h3>
-            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
-          </div>
-          <p class="rcard__desc">Everyone needs a basic spaghetti bolognese recipe that still tastes great...</p>
-        </div>
-      </article>
-
-      <article class="rcard">
-        <div class="rcard__media">
-          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
-          <ul class="tags">
-            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 40 min</li>
-            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> American</li>
-            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
-          </ul>
-          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Fluffy American pancakes som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-        </div>
-        <div class="rcard__body">
-          <div class="rcard__head">
-            <h3 class="rcard__title"><a href="#">Fluffy American pancakes</a></h3>
-            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
-          </div>
-          <p class="rcard__desc">This easy American pancake recipe makes really light and fluffy pancakes that are great...</p>
-        </div>
-      </article>
-
-      <article class="rcard">
-        <div class="rcard__media">
-          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
-          <ul class="tags">
-            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 2 hours</li>
-            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> British</li>
-            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
-          </ul>
-          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Easy cottage pie som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-        </div>
-        <div class="rcard__body">
-          <div class="rcard__head">
-            <h3 class="rcard__title"><a href="#">Easy cottage pie</a></h3>
-            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
-          </div>
-          <p class="rcard__desc">James Martin's easy cottage pie recipe is a family favourite...</p>
-        </div>
-      </article>
-
-      <article class="rcard">
-        <div class="rcard__media">
-          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
-          <ul class="tags">
-            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 2 hours</li>
-            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> British</li>
-            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
-          </ul>
-          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Easy cottage pie som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
-        </div>
-        <div class="rcard__body">
-          <div class="rcard__head">
-            <h3 class="rcard__title"><a href="#">Easy cottage pie</a></h3>
-            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
-          </div>
-          <p class="rcard__desc">James Martin's easy cottage pie recipe is a family favourite...</p>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="rail-nav">
-      <button type="button" class="rail-nav__btn rail-nav__btn--prev" id="rail-prev" aria-label="Vis forrige opskrifter"></button>
-      <div class="rail-track" id="rail-track" aria-hidden="true"><div class="rail-thumb" id="rail-thumb"></div></div>
-      <button type="button" class="rail-nav__btn rail-nav__btn--next" id="rail-next" aria-label="Vis næste opskrifter"></button>
-    </div>
-  </section>
+  </section> 
 
 </main>
 
 <!-- FOOTER -->
+ <hr>
+		<p class="cr">© BBC Food 2026 </p>
+    	<footer>
+		<article>
+		<h4>Address</h4>
+		<p>Nørregade 82</p>
+		<p>9000 Aalborg C</p>
+		<p>Denmark</p>
+		</article>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+		<article>
+		<h4>Quick shortcuts</h4>
+		<p>Recies</p>
+		<p>Tips & Advice</p>
+		<p>Top chefs</p>
+		<p>Brands</p>
+		</article>
+
+		<article>
+		<h4>Contact</h4>
+		<p>Phone: +45 34 43 44 22</p>
+		<p>Mail: TheFoodNetwork@gmail.com</p>
+		</article>
+
+		<article class="soMe">
+		<i class="fa-brands fa-youtube fa-2xl" style="color: rgb(243, 241, 236);"></i>
+		<i class="fa-brands fa-instagram fa-2xl" style="color: rgb(243, 241, 236);"></i>
+		<i class="fa-brands fa-facebook fa-2xl" style="color: rgb(243, 241, 236);"></i>
+
+		</article>
+
+	</footer>
+
+<p class="popup-message" id="popup-message"></p>
 
 <script src="script.js"></script>
 </body>
