@@ -240,6 +240,7 @@ transform: translateX(0);
      width: 150px;
      height: 150px;
     cursor: pointer;
+   
 
         img{
             width: 100%;
@@ -253,6 +254,9 @@ transform: translateX(0);
             color: var(--darkRed);
             font-weight: bold;
         }
+    }
+        article:hover{
+         transform: scale(1.1);
     }
 }
 /* sektions titler */
