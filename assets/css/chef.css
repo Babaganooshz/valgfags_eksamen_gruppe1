@@ -1,8 +1,12 @@
+body{
+    overflow-x: hidden;
+}
+
 .chefMain {
     margin-left: var(--xLargeSpacer);
     margin-right: var(--xLargeSpacer);
     margin-top: var(--mediumSpacer);
-
+   
 }
 
 /* mads intro section start */

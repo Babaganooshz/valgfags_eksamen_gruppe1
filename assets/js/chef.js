@@ -5,7 +5,7 @@ const chef =
     name: "Mads Jensen",
     tag: "professional chef",
     bio: "Mads Jensen is one of Denmark’s most celebrated chefs, known for his refined approach to different cuisines. With a deep respect for nature, seasonal ingredients and thoughtful craftsmanship, he creates elegant dishes that combine simplicity, creativity and exceptional flavour.",
-    image: "../assets/img/chefs/mads.avif",
+    image: "assets/img/chefs/mads.avif",
     followers: 20000,
     recipes: 50,
     tipsAndAdvice: 30,
