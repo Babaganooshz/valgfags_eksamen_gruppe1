@@ -74,7 +74,7 @@ const chefs = [
     },
     {
         navn: 'Xiaomei Lee',
-        image: '../assets/img/chefs/Xiaomei.avif',
+        image: 'assets/img/chefs/Xiaomei.avif',
         rolle: 'Professionel chef',
     },
     {
