@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forloren Hare - Opskrift</title>
+  <meta name="description" content="Opskrift på Forloren Hare - med ingredienser der skalerer efter antal personer.">
+
+  <link rel="stylesheet" href="./assets/css/opskrift.css">
+  	<script src="./assets/js/opskrift.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap" rel="stylesheet">
+    
+  
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<main class="page">
+  <div class="recipe">
+    <div class="recipe__info">
+      <nav class="crumbs" aria-label="Brødkrumme">
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Recipies</a></li>
+          <li aria-current="page">Lasagne al forno</li>
+        </ol>
+      </nav>
+
+      <h1>Lasange al forno</h1>
+
+      <div class="ratingline">
+        <span class="stars" style="--rating:3" role="img" aria-label="3 ud af 5 stjerner"></span>
+        <span>(67)</span>
+        <a href="#kommentarer">&gt; Kommentarer (29)</a>
+      </div>
+
+      <div class="author">
+        <img alt="Mads Jensen" width="56" height="56"
+             src="./assets/img/chefs/mads.avif">
+        <p>
+          <strong>Mads Jensen</strong>
+          <span>har udgivet denne opskrift</span>
+        </p>
+      </div>
+
+      <p class="intro">
+        This is Mads' classic lasagne recipe which has been perfected over the years. For the best results leave the lasagne to stand for six hours before cooking.
+      </p>
+
+      <ul class="facts">
+        <li><img class="icon" src="./assets/img/svg/schedule_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="time" aria-hidden="true"> 2h 30min</li>
+        <li><img class="icon" src="./assets/img/svg/globe_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="cuisine" aria-hidden="true"> DK</li>
+        <li><img class="icon" src="./assets/img/svg/chef_hat_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="" aria-hidden="Level"> Easy</li>
+
+      </ul>
+
+      <!-- ---------- Ingrediensliste ---------- -->
+      <section class="ingredients" aria-labelledby="ing-title">
+        <h2 id="ing-title">Ingredients</h2>
+
+        <div class="servings" role="group" aria-label="Antal personer">
+          <button type="button" id="servings-minus" aria-label="Færre personer">-</button>
+          <output id="servings-label" for="servings-minus servings-plus">4 people</output>
+          <button type="button" id="servings-plus" aria-label="Flere personer">+</button>
+        </div>
+        <p class="sr-only" id="servings-status" role="status" aria-live="polite"></p>
+
+        <!--
+          Sådan tilføjer du en ingrediens:
+          data-amount = mængden til 4 personer
+          data-type   = "weight" (gram) eller udelad for stykker/spiseskeer
+          data-sg / data-pl på .name = ental / flertal (valgfrit)
+          Ingredienser uden data-amount ændres ikke (fx "uanede mængder").
+        -->
+        <ul id="ingredient-list">
+          <li data-amount="2" data-type="weight"><span class="qty">2 tbsp </span> <span class="name">Olive Oil</span></li>
+          <li data-amount="2"  data-type="weight"><span class="qty">2</span> <span class="name">Onions</span></li>
+          <li data-amount="4"><span class="qty">4 sticks</span> <span class="name">Sticks Celery</span></li>
+          <li data-amount="2"><span class="qty">2</span> <span class="name">garlic cloves</span></li>
+          <li data-amount="2"><span class="qty">2</span> <span class="name" data-sg="rød chilipeber, endu finere hakket" data-pl="røde chilipebere, endu finere hakket">rød chilipeber, endu finere hakket</span></li>
+          <li data-amount="850" data-type="weight"><span class="qty">850g</span> <span class="name">blandede grøntsager, i grove tern</span></li>
+          <li data-amount="400" data-type="weight"><span class="qty">400g</span> <span class="name">bacon</span></li>
+          <li data-amount="1"><span class="qty">1</span> <span class="name" data-sg="hel fennikel" data-pl="hele fennikler">hel fennikel</span></li>
+          <li><span class="name">uanede mængder spidskommen</span></li>
+          <li data-amount="3"><span class="qty">3</span> <span class="name" data-sg="grønt æble" data-pl="grønne æbler">grønne æbler</span></li>
+          <li data-amount="1"><span class="qty">1</span> <span class="name" data-sg="salmebog, de små synger" data-pl="salmebøger, de små synger">salmebog, de små synger</span></li>
+          <li data-amount="3"><span class="qty">3</span> <span class="name" data-sg="spiseske kardemomme" data-pl="spiseskeer kardemomme">spiseskeer kardemomme</span></li>
+          <li data-amount="40"><span class="qty">40</span> <span class="name">vaffel-rør</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="recipe__media">
+
+      <div class="toolbar">
+        <button type="button" id="btn-copy" aria-label="Kopiér ingredienser" title="Kopiér ingredienser">
+          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        </button>
+        <button type="button" id="btn-save" aria-label="Gem opskrift" title="Gem opskrift" aria-pressed="false">
+          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        </button>
+        <button type="button" id="btn-share" aria-label="Del opskrift" title="Del opskrift">
+          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        </button>
+        <button type="button" id="btn-print" aria-label="Udskriv opskrift" title="Udskriv opskrift">
+          <img class="icon" src="placeholder.jpg" alt="" aria-hidden="true">
+        </button>
+      </div>
+
+      <div class="recipe-card">
+        
+        <div class="hero">
+          <!-- MAIN IMG -->
+          <img src="placeholder.jpg" width="960" height="680"
+               alt="Skiver af forloren hare med brun sovs, kogte kartofler og ribsgele">
+          <ul class="tags">
+            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 240 min</li>
+            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Svendborg</li>
+            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          </ul>
+        </div>
+
+        <div class="story">
+          <h2>Foodstory</h2>
+          <p>
+            Jeg var engang et smut i Indien, hvor de serverede noget i et gadekøkken, jeg vil tro har været forloren hare. Det smagte i hvertfald af hare og råd.<br>
+            - siden da, har jeg bestræbt mig på at efterleve drømmen.
+          </p>
+
+          <div class="method">
+            <h2>Fremgangsmåde</h2>
+            <h3>Forloren Hare</h3>
+            <ol>
+              <li>Først gør vi sådan når vi vasker vor tøj, vasker vor tøj, vasker vor tøj</li>
+              <li>Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj</li>
+              <li>Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj tidligt mandag morgen. Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj</li>
+              <li>Først gør vi sådan når vi vasker vor tøj, vasker vor tøj, vasker vor tøj</li>
+              <li>Så gør vi sådan når vi tører vor tøj, tører vor tøj, tører vor tøj</li>
+            </ol>
+          </div>
+
+          <div class="rate">
+            <h2>Giv vurdering</h2>
+            <div class="rate__stars" id="rate-stars">
+              <button type="button" class="rate__star" aria-label="Giv 1 stjerne"   aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+              <button type="button" class="rate__star" aria-label="Giv 2 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+              <button type="button" class="rate__star" aria-label="Giv 3 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+              <button type="button" class="rate__star" aria-label="Giv 4 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+              <button type="button" class="rate__star" aria-label="Giv 5 stjerner"  aria-pressed="false"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+            </div>
+            <p class="rate__msg" id="rate-msg" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL-KORT  (data-open peger på id'et på <dialog> nedenfor) -->
+  <section class="tips" aria-label="Gode råd og videoguides">
+
+    <button type="button" class="tip" data-open="modal-loeg">
+      <img alt="" src="placeholder.jpg">
+      <span class="tip__text">
+        <span class="tip__title">Sådan hakker du et løg</span>
+        <span class="tip__desc">Lær at hakke et løg hurtigt og jævnt med denne lette videoguide. Det er den bedste måde at hakke et løg på, uden at græde...</span>
+      </span>
+    </button>
+
+    <button type="button" class="tip" data-open="modal-hvidloeg">
+      <img alt="" src="placeholder.jpg">
+      <span class="tip__text">
+        <span class="tip__title">Sådan finthakker du hvidløg</span>
+        <span class="tip__desc">Se hvordan du skræller og finthakker hvidløg på få sekunder, så smagen fordeler sig jævnt i retten...</span>
+      </span>
+    </button>
+
+    <button type="button" class="tip" data-open="modal-fennikel">
+      <img alt="" src="placeholder.jpg">
+      <span class="tip__text">
+        <span class="tip__title">Sådan skærer du fennikel</span>
+        <span class="tip__desc">En kort guide til at gøre fennikelknolden klar og skære den i tynde, ensartede skiver eller tern...</span>
+      </span>
+    </button>
+  </section>
+
+  <!-- ---------- Modaler ---------- -->
+  <dialog class="modal" id="modal-loeg" aria-labelledby="modal-loeg-title">
+    <div class="modal__inner">
+      <button type="button" class="modal__close" aria-label="Luk"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+      <div class="modal__scroll">
+        <!-- VIDEO: erstat .modal__media med et <iframe> eller <video> -->
+        <div class="modal__media">
+          <img alt="" src="placeholder.jpg">
+          <span class="modal__play" aria-hidden="true"></span>
+        </div>
+        <div class="modal__body">
+          <h2 id="modal-loeg-title">Sådan hakker du et løg</h2>
+          <p>Lær at hakke et løg hurtigt og jævnt med denne lette videoguide. Metoden giver ensartede stykker, så løgene steger jævnt og ikke brænder på i kanten.</p>
+          <h3>Sådan gør du</h3>
+          <ol>
+            <li>Skær løget over fra top til rod, men lad roden sidde.</li>
+            <li>Læg den halve løg med snitfladen nedad og skræl skallen af.</li>
+            <li>Skær 2-3 vandrette snit ind mod roden, uden at skære helt igennem.</li>
+            <li>Skær lodrette snit fra top mod rod - jo tættere, jo finere hakket.</li>
+            <li>Skær på tværs, så falder løget af i små, ensartede tern.</li>
+          </ol>
+          <p class="modal__note">Tip: Sæt løget i køleskabet en halv time før, så tirrer det mindre i øjnene.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-hvidloeg" aria-labelledby="modal-hvidloeg-title">
+    <div class="modal__inner">
+      <button type="button" class="modal__close" aria-label="Luk"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+      <div class="modal__scroll">
+        <div class="modal__media">
+          <img alt="" src="placeholder.jpg">
+          <span class="modal__play" aria-hidden="true"></span>
+        </div>
+        <div class="modal__body">
+          <h2 id="modal-hvidloeg-title">Sådan finthakker du hvidløg</h2>
+          <p>Se hvordan du skræller og finthakker hvidløg på få sekunder, så smagen fordeler sig jævnt i retten.</p>
+          <h3>Sådan gør du</h3>
+          <ol>
+            <li>Læg fedet under den flade side af en stor kniv og pres let, så skallen løsner sig.</li>
+            <li>Skræl skallen af og skær den hårde rodende af.</li>
+            <li>Skær fedet i tynde skiver, og skær skiverne i strimler.</li>
+            <li>Hak strimlerne på tværs, indtil stykkerne er så fine, du ønsker.</li>
+          </ol>
+          <p class="modal__note">Tip: Steg hvidløg ved middel varme - det bliver bittert, hvis det brænder på.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-fennikel" aria-labelledby="modal-fennikel-title">
+    <div class="modal__inner">
+      <button type="button" class="modal__close" aria-label="Luk"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+      <div class="modal__scroll">
+        <div class="modal__media">
+          <img alt="" src="placeholder.jpg">
+          <span class="modal__play" aria-hidden="true"></span>
+        </div>
+        <div class="modal__body">
+          <h2 id="modal-fennikel-title">Sådan skærer du fennikel</h2>
+          <p>En kort guide til at gøre fennikelknolden klar og skære den i tynde, ensartede skiver eller tern.</p>
+          <h3>Sådan gør du</h3>
+          <ol>
+            <li>Skær stilkene og de fine grønne top-blade af - gem toppen til pynt.</li>
+            <li>Fjern det yderste, seje lag, hvis det er misfarvet.</li>
+            <li>Del knolden i to fra top til bund og skær den hårde kerne ud i en V-form.</li>
+            <li>Læg de to halvdele med snitfladen nedad og skær dem i tynde skiver eller tern.</li>
+          </ol>
+          <p class="modal__note">Tip: Fennikel i tynde skiver kan spises rå - og bliver sød og mild, når den steges.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- RELATEREDE OPSKRIFTER -->
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Relaterede Opskrifter</h2>
+
+    <div class="rail" id="rail" tabindex="0" role="region" aria-label="Relaterede opskrifter - scroll sidelæns">
+
+      <article class="rcard">
+        <div class="rcard__media">
+          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
+          <ul class="tags">
+            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 2 h 30 min</li>
+            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Italien</li>
+            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          </ul>
+          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Lasagne al forno som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+        </div>
+        <div class="rcard__body">
+          <div class="rcard__head">
+            <h3 class="rcard__title"><a href="#">Lasagne al forno</a></h3>
+            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
+          </div>
+          <p class="rcard__desc">This is Mary's classic lasagne recipe which has been perfected over the years...</p>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__media">
+          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
+          <ul class="tags">
+            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 1 hour</li>
+            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Italien</li>
+            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          </ul>
+          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Easy spaghetti bolognese som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+        </div>
+        <div class="rcard__body">
+          <div class="rcard__head">
+            <h3 class="rcard__title"><a href="#">Easy spaghetti bolognese</a></h3>
+            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
+          </div>
+          <p class="rcard__desc">Everyone needs a basic spaghetti bolognese recipe that still tastes great...</p>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__media">
+          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
+          <ul class="tags">
+            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 40 min</li>
+            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> American</li>
+            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          </ul>
+          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Fluffy American pancakes som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+        </div>
+        <div class="rcard__body">
+          <div class="rcard__head">
+            <h3 class="rcard__title"><a href="#">Fluffy American pancakes</a></h3>
+            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
+          </div>
+          <p class="rcard__desc">This easy American pancake recipe makes really light and fluffy pancakes that are great...</p>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__media">
+          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
+          <ul class="tags">
+            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 2 hours</li>
+            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> British</li>
+            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          </ul>
+          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Easy cottage pie som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+        </div>
+        <div class="rcard__body">
+          <div class="rcard__head">
+            <h3 class="rcard__title"><a href="#">Easy cottage pie</a></h3>
+            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
+          </div>
+          <p class="rcard__desc">James Martin's easy cottage pie recipe is a family favourite...</p>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__media">
+          <img alt="" width="400" height="200" loading="lazy" src="placeholder.jpg">
+          <ul class="tags">
+            <li class="tag tag--time"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> 2 hours</li>
+            <li class="tag tag--country"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> British</li>
+            <li class="tag tag--level"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"> Easy</li>
+          </ul>
+          <button type="button" class="heart" aria-pressed="false" aria-label="Gem Easy cottage pie som favorit"><img class="icon" src="placeholder.jpg" alt="" aria-hidden="true"></button>
+        </div>
+        <div class="rcard__body">
+          <div class="rcard__head">
+            <h3 class="rcard__title"><a href="#">Easy cottage pie</a></h3>
+            <div class="rcard__score"><span class="stars" style="--rating:4" role="img" aria-label="4 ud af 5 stjerner"></span> 4/5</div>
+          </div>
+          <p class="rcard__desc">James Martin's easy cottage pie recipe is a family favourite...</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="rail-nav">
+      <button type="button" class="rail-nav__btn rail-nav__btn--prev" id="rail-prev" aria-label="Vis forrige opskrifter"></button>
+      <div class="rail-track" id="rail-track" aria-hidden="true"><div class="rail-thumb" id="rail-thumb"></div></div>
+      <button type="button" class="rail-nav__btn rail-nav__btn--next" id="rail-next" aria-label="Vis næste opskrifter"></button>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
