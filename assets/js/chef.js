@@ -3,7 +3,7 @@
 const chef =
 {
     name: "Mads Jensen",
-    tag: "professional chef",
+    tag: "Professional chef",
     bio: "Mads Jensen is one of Denmark’s most celebrated chefs, known for his refined approach to different cuisines. With a deep respect for nature, seasonal ingredients and thoughtful craftsmanship, he creates elegant dishes that combine simplicity, creativity and exceptional flavour.",
     image: "assets/img/chefs/mads.avif",
     followers: 20000,
@@ -271,11 +271,7 @@ document.addEventListener('DOMContentLoaded', renderbrands);
 // chefs array
 
 const chefs = [
-    {
-        navn: 'Mads Jensen',
-        image: 'assets/img/chefs/mads.avif',
-        rolle: 'Professionel chef',
-    },
+
     {
         navn: 'Xiaomei Lee',
         image: 'assets/img/chefs/Xiaomei.avif',

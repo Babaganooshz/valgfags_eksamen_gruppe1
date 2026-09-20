@@ -127,7 +127,7 @@ modals.forEach(function (modal) {
     modal.close();
   });
 
-  /* Et klik på selve dialogen (og ikke på indholdet) er et klik på baggrunden */
+  
   modal.addEventListener('click', function (event) {
     if (event.target === modal) {
       modal.close();
@@ -136,63 +136,5 @@ modals.forEach(function (modal) {
 });
 
 
-/* Værktøjslinjen: kopiér ingredienser, gem, del og udskriv */
-document.getElementById('copy-ingredients-button').addEventListener('click', function () {
-  const ingredientsText = document.querySelector('.ingredients').innerText;
-
-  navigator.clipboard.writeText(ingredientsText).then(
-    function () { showPopup('Ingredienser kopieret'); },
-    function () { showPopup('Kunne ikke kopiere'); }
-  );
-});
-
-const saveButton = document.getElementById('save-recipe-button');
-
-saveButton.addEventListener('click', function () {
-  saveButton.classList.toggle('is-saved');
-
-  if (saveButton.classList.contains('is-saved')) {
-    showPopup('Opskrift gemt');
-  } else {
-    showPopup('Opskrift fjernet fra gemte');
-  }
-  /* Her kan du koble din egen "gemte opskrifter"-funktion på */
-});
-
-/* Del: kopierer linket til siden */
-document.getElementById('share-recipe-button').addEventListener('click', function () {
-  navigator.clipboard.writeText(window.location.href).then(
-    function () { showPopup('Link kopieret'); },
-    function () { showPopup('Kunne ikke kopiere linket'); }
-  );
-});
-
-document.getElementById('print-recipe-button').addEventListener('click', function () {
-  window.print();
-});
 
 
-/* Giv vurdering: stjernerne til og med den valgte får klassen filled */
-const rateStars = document.querySelectorAll('.rate-star');
-const rateMessage = document.getElementById('rate-message');
-
-rateStars.forEach(function (star, index) {
-  star.addEventListener('click', function () {
-    rateStars.forEach(function (otherStar, otherIndex) {
-      otherStar.classList.toggle('filled', otherIndex <= index);
-    });
-
-    rateMessage.textContent = 'Tak for din vurdering: ' + (index + 1) + ' ud af 5';
-    /* Her kan du sende vurderingen til din egen backend */
-  });
-});
-
-
-/* Hjerter på de relaterede opskrifter (kun visuelt) */
-const favoriteButtons = document.querySelectorAll('.favorite-button');
-
-favoriteButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    button.classList.toggle('is-favorite');
-  });
-});

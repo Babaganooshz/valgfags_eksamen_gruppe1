@@ -312,7 +312,7 @@ function renderBrands() {
 }
 
 
-// Smækker alt ind i HTML når alt HTML er læst
+// kilde: https://www.w3schools.com/js/js_events_load.asp, domcontentloaded, hjælper til at vente på at html siden er klar. 
 document.addEventListener('DOMContentLoaded', renderRecipes);
 document.addEventListener('DOMContentLoaded', renderTips);
 document.addEventListener('DOMContentLoaded', renderChefs);
