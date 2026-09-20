@@ -93,6 +93,20 @@
 
 /* mads intro section slut */
 
+/* Scrollbar */
+.otherChefsCards::-webkit-scrollbar{
+     height: 20px;
+}
+
+.otherChefsCards::-webkit-scrollbar-thumb{
+    background: #4D8C75;
+    border-radius: 10px;
+}
+
+.otherChefsCards::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
+
 /* mads opskrifter section start */
 
 .chefRecipeNav {
@@ -304,6 +318,8 @@
             background-size: cover;
         }
 
+
+
         article {
             width: 49%;
             overflow: hidden;
@@ -371,10 +387,11 @@
 
     .otherChefsCards {
         display: flex;
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: hidden;
         gap: var(--xsSpacer);
         flex-shrink: 0;
+        padding: var(--smallSpacer) var(--mediumSpacer);
 
         
 .bottom{
@@ -392,10 +409,10 @@
     display: flex;
     padding: 0px 5px;
      height: 25px;
-                        color: var(--teal);
-                        font-weight: bold;
-                        cursor: pointer;
-                        box-shadow: 2px 2px 10px black;
+     color: var(--teal);
+     font-weight: bold;
+      cursor: pointer;
+     box-shadow: 2px 2px 10px black;
 
                         }
 
@@ -408,6 +425,10 @@
                             display: flex;
                         }
 }
+
+    article:hover {
+        transform: scale(1.1);
+    }
 
         article {
             width: 250px;
